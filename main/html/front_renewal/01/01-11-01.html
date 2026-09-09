@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>메리츠화재 공식 사이트</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="메리츠화재">
+    <meta name="description" content="메리츠화재 보험금 청구현황 확인">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../common/images/meritz_favicon.ico">
+    <link rel="apple-touch-icon" href="../../common/images/meritz_favicon.png">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../../default/css/renewal/base.css">
+
+    <!-- script -->
+    <script src="../../common/js/jquery/jquery.min.js"></script>
+    <script src="../../common/js/ui_renewal/swiper-bundle.min.js"></script>
+    <script src="../../common/js/ui_renewal/ui.js"></script>
+    <!-- datepicker -->
+    <script src="../../common/js/jquery/jquery-ui.min.js"></script>
+    <script src="../../common/js/ui_renewal/datepicker.js"></script>
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="../../common/js/ui_renewal/swiper-bundle.min.css">
+</head>
+<body class="renew">
+    <div class="skipnav"><a href="#Container">본문 바로가기</a></div>
+    <!-- Wrap [s] -->
+    <div id="Wrap">
+        <!-- header [s] -->
+        <header id="Header">
+            <div class="header_wrap">
+                <div class="btns_left"><button type="button" class="btn_prev"><span>이전</span></button></div>
+                <h1>청구현황 확인</h1>
+                <div class="btns_right"><button type="button" class="btn_menu"><span>메뉴</span></button></div>
+            </div>
+        </header>
+        <!-- // header [e] -->
+
+        <!-- main container [s] -->
+        <main id="Container">
+            <!-- container [s] -->
+            <section class="contents claim_status">
+                <!-- 검색영역 -->
+                <div class="status_search">
+                    <div class="form_item search">
+                        <div class="inp_box">
+                            <input type="text" class="inp_txt" value="" title="청구현황 검색어" placeholder="검색어를 입력해 주세요.">
+                            <button type="button" class="srch_btn"><span class="hidden">검색</span></button>
+                            <button type="button" class="delete_btn hide"><span class="hidden">키워드 지우기</span></button>
+                        </div>
+                    </div>
+                    <!-- 버튼상태변경 .on 추가 -->
+                    <button type="button" class="status_filter"><span class="hidden">상세조회 열기</span></button>
+                </div>
+
+                <!-- 상세조회 필터 -->
+                <div class="status_filter_layer">
+                    <!-- 치료받은분/청구유형 -->
+                    <div class="form_item col2 select">
+                        <div class="col">
+                            <label for="person" class="form_label"><span>치료받은분(피보험자)</span></label>
+                            <div class="inp_box">
+                                <div class="ui_select">
+                                    <!-- 피보험자 1명 일경우  disabled 설정 -->
+                                    <select id="person" name="person" title="치료받은분(피보험자) 선택">
+                                        <option selected>전체</option>
+                                        <option value="1">김메리</option>
+                                        <option value="2">김리츠</option>
+                                        <option value="3">김리라</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="claimType" class="form_label"><span>청구유형</span></label>
+                            <div class="inp_box">
+                                <div class="ui_select">
+                                    <select id="claimType" name="claimType" title="청구유형 선택">
+                                        <option selected>전체</option>
+                                        <option value="1">질병</option>
+                                        <option value="2">상해</option>
+                                        <option value="3">재물</option>
+                                        <option value="4">배상</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 조회일자/정렬 기준 -->
+                    <div class="form_item col2">
+                        <div class="col">
+                            <div class="form_label"><span>조회일자기준</span></div>
+                            <div class="radio_group tab_style">
+                                <div class="radio_item"><input type="radio" id="sort1-1" name="sort" value="1" checked><label for="sort1-1"><span>청구</span></label></div>
+                                <div class="radio_item"><input type="radio" id="sort1-2" name="sort" value="2"><label for="sort1-2"><span>사고</span></label></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form_label"><span>정렬기준</span></div>
+                            <div class="radio_group tab_style">
+                                <div class="radio_item"><input type="radio" id="sort2-1" name="align" value="1" checked><label for="sort2-1"><span>최근순</span></label></div>
+                                <div class="radio_item"><input type="radio" id="sort2-2" name="align" value="2"><label for="sort2-2"><span>과거순</span></label></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 조회기간 -->
+                    <div class="form_item">
+                        <div class="form_label"><span>조회기간</span></div>
+                        <div class="radio_group tab_style filter">
+                            <div class="radio_item"><input type="radio" id="sort3-1" name="period"><label for="sort3-1"><span>3개월</span></label></div>
+                            <div class="radio_item"><input type="radio" id="sort3-2" name="period"><label for="sort3-2"><span>6개월</span></label></div>
+                            <div class="radio_item"><input type="radio" id="sort3-3" name="period"><label for="sort3-3"><span>1년</span></label></div>
+                            <div class="radio_item"><input type="radio" id="sort3-4" name="period" checked><label for="sort3-4"><span>3년</span></label></div>
+                            <div class="radio_item"><input type="radio" id="sort3-5" name="period"><label for="sort3-5"><span>직접입력</span></label></div>
+                        </div>
+                        
+                        <div class="form_item date_period"><!-- 유효성 체크 후 에러시 class값에 'error'추가 -->
+                            <div class="col date">
+                                <div class="inp_box">
+                                    <input type="number" id="searchStartDate" name="" class="datepicker1 inp_txt num_type" inputmode="numeric" aria-label="조회 시작일" placeholder="20260910" maxlength="8" value="20230515" disabled>
+                                </div>
+                            </div>
+                            <p class="err_txt">에러문구1</p>
+                            <span class="dash">~</span>
+                            <div class="col date">
+                                <div class="inp_box">
+                                    <input type="text" id="searchEndDate" name="" class="datepicker1 inp_txt num_type" inputmode="numeric" aria-label="조회 종료일" placeholder="20260910" maxlength="8" value="20260515" disabled>
+                                </div>
+                            </div>
+                            <p class="err_txt">에러문구2</p>
+                        </div>
+                    </div>
+
+                    <p class="list_dot">청구일자 조회기준 : 최초 청구일(추가 청구시 추가 청구일)</p>
+                    <button type="button" class="btn_ok"><span>조회</span></button>
+                </div>
+                <!-- // 상세조회 필터 -->
+
+                <!-- 검색결과 비노출 .hide 추가 -->
+                <div class="status_result">
+                    <p class="result_count">총 <em>17</em>건</p>
+                    <ul class="status_list">
+                        <li>
+                            <button type="button">
+                                <!-- 접수/서류미접수/심사진행중/면책/종결 : .receive/.notyet/.ongoing/.immunity/.terminate -->
+                                <span class="status_meta"><span>2023.08.08</span><span class="chip receive">접수</span></span>
+                                <strong>좌골신경통, 요추부 외 4건</strong>
+                                <span class="status_info"><span>김메리</span><span>999999999</span></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="status_meta"><span>2023.08.08</span><span class="chip notyet">서류미접수</span></span>
+                                <strong>발목 염좌, 인대파열 외 2건</strong>
+                                <span class="status_info"><span>김메리</span><span>999999999</span></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="status_meta"><span>2023.08.08</span><span class="chip ongoing">심사진행중</span></span>
+                                <strong>무릎 반월판 손상, 슬관절염 외 3건</strong>
+                                <span class="status_info"><span>김메리</span><span>999999999</span></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="status_meta"><span>2023.08.08</span><span class="chip terminate">종결</span></span>
+                                <strong>어깨 회전근개파열, 견관절 외 5건</strong>
+                                <span class="status_info"><span>김메리</span><span>999999999</span></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="status_meta"><span>2023.08.08</span><span class="chip immunity">면책</span></span>
+                                <strong>손목터널증후군, 수근관 협착 외 1건</strong>
+                                <span class="status_info"><span>김메리</span><span>999999999</span></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="status_meta"><span>2023.08.08</span><span class="chip notyet">서류미접수</span></span>
+                                <strong>척추관협착증, 디스크탈출 외 2건</strong>
+                                <span class="status_info"><span>김메리</span><span>999999999</span></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- // 검색결과 -->
+
+                <!-- 검색결과 0건 노출 .hide 삭제 -->
+                <div class="status_result hide">
+                    <p class="result_count">총 <em>0</em>건</p>
+                    <div class="empty_data">
+                        <p class="empty_txt warning">
+                            <strong>검색결과</strong>가 없습니다.
+                        </p>
+                    </div>
+                </div>
+                <!-- // 검색결과 0건 -->
+            </section>
+            <!-- container [e] -->
+        </main>
+        <!-- // main container [e] -->
+    </div>
+    <!-- // Wrap [e] -->
+
+    <!-- popup area [s] -->
+    <div id="layer_popup_container"></div>
+    <!-- popup area [e] -->
+
+    <!-- 퍼블리싱 UI 확인을 위한 script로 개발 시 참고만 해 주세요. -->
+    <script type="text/javascript">
+        $(function () {
+            var $statusResult = $('.status_result'),
+                $statusList = $('.status_list'),
+                type = new URLSearchParams(location.search).get('type');
+
+            // result: 검색결과 2건 노출
+            if (type === 'result') {
+                $statusList.children('li').not(':has(.chip.ongoing, .chip.terminate)').remove();
+                $statusResult.eq(0).find('.result_count em').text($statusList.children('li').length);
+            }
+            // noresult: 검색결과 0건 노출
+            if (type === 'noresult') {
+                $statusResult.eq(0).addClass('hide');
+                $statusResult.eq(1).removeClass('hide');
+            }
+
+            // 검색결과 순차 노출
+            function animateStatusList($items) {
+                $items.each(function (index) {
+                    $(this).css('animation-delay', index * 0.12 + 's');
+                });
+            }
+
+            animateStatusList($statusList.children('li'));
+
+            new MutationObserver(function (mutations) {
+                var $items = $();
+
+                $.each(mutations, function (_, mutation) {
+                    $items = $items.add($(mutation.addedNodes).filter('li'));
+                });
+
+                animateStatusList($items);
+            }).observe($statusList[0], { childList: true });
+
+            // 검색어 입력 및 삭제
+            $('.status_search .inp_txt').on('input', function () {
+                $(this).siblings('.srch_btn').removeClass('hide');
+                $(this).siblings('.delete_btn').addClass('hide');
+            }).trigger('input');
+
+            $('.status_search .srch_btn').on('click', function () {
+                if (!$.trim($(this).siblings('.inp_txt').val())) return;
+
+                $(this).addClass('hide').siblings('.delete_btn').removeClass('hide');
+            });
+
+            $('.status_search .delete_btn').on('click', function () {
+                $(this).siblings('.inp_txt').val('').trigger('input').focus();
+            });
+
+            // 상세조회 필터 토글
+            $('.status_filter').on('click', function () {
+                var $button = $(this),
+                    $layer = $('.status_filter_layer'),
+                    isOpen = $button.hasClass('on');
+
+                $button.toggleClass('on', !isOpen);
+                $button.find('.hidden').text(isOpen ? '상세조회 열기' : '상세조회 닫기');
+
+                if (isOpen) {
+                    $layer.stop(true, true).slideUp(200);
+                } else {
+                    $layer.addClass('no_motion').show()
+                        .find('input:radio:checked').trigger('change');
+
+                    $layer[0].offsetHeight;
+                    $layer.removeClass('no_motion').hide()
+                        .stop(true, true).slideDown(200);
+                }
+            });
+
+            // 조회기간 계산 (실제 조회 기준은 개발 시 적용)
+            $('.status_filter_layer input[name="period"]').on('change', function () {
+                var months = [3, 6, 12, 36, 0][$('.status_filter_layer input[name="period"]').index(this)],
+                    $datePeriod = $('.status_filter_layer .date_period'),
+                    $dateInputs = $datePeriod.find('.inp_txt.num_type');
+
+                if (!months) $dateInputs.filter(':disabled').val('');
+                $datePeriod.toggleClass('disabled', !!months);
+                $dateInputs.datepicker(months ? 'disable' : 'enable');
+
+                if (months) {
+                    var today = new Date(),
+                        start = new Date(today.getFullYear(), today.getMonth() - months + 1, 0);
+                    start.setDate(Math.min(today.getDate(), start.getDate()));
+                    $dateInputs.each(function (index) {
+                        var date = index ? today : start;
+                        $(this).val(date.getFullYear() + String(date.getMonth() + 1).padStart(2, '0') + String(date.getDate()).padStart(2, '0'));
+                    });
+                }
+            }).filter(':checked').trigger('change');
+
+            // 조회 후 필터 닫기
+            $('.status_filter_layer .btn_ok').on('click', function () {
+                $('.status_filter.on').trigger('click');
+            });
+        });
+        
+        $(function () {
+            // 피보험자 1명: disabled로 선택 제한
+            if (new URLSearchParams(location.search).get('type') === 'single') {
+                $('#person').val('1').prop('disabled', true);
+            }
+            selectbox('person');
+            selectbox('claimType');
+        });
+        // drop-down select box
+        function selectbox(_id) {
+            renewalUI.setCombobox({
+                id: _id,
+            });
+        }
+    </script>
+</body>
+</html>

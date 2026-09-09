@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>메리츠화재 공식 사이트</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="메리츠화재">
+    <meta name="description" content="메리츠화재 공식 모바일사이트입니다. 고객서비스 및 보험가입안내 제공. 암보험, 치매보험, 펫보험, 건강보험, 치아보험, 태아보험, 어린이보험, 운전자보험, 입원비보험, 수술비보험, 종합보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험 등. 인터넷고객센터를 이용한 계약조회, 보험금 청구, 보험계약 대출, 증명서 발급, 고객정보 변경, 보험료 납입, 전자민원 신청, 서비스망 찾기 등의 서비스를 만나보세요.">
+    <meta name="keywords" content="메리츠화재, 메리츠화재, 운전자보험, 암보험, 태아보험, 어린이보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험, 치매보험, 펫보험, 시니어보험, 간편보험, 입원비보험, 수술비보험, 종합보험, 건강보험, 자동차보험, 다이렉트자동차보험, 다이렉트 해외여행보험, 채팅상담, 보험료계산, 보험가입 상담신청">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../common/images/meritz_favicon.ico">
+    <link rel="apple-touch-icon" href="../../common/images/meritz_favicon.png">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../../default/css/renewal/base.css">
+
+    <!-- script -->
+    <script src="../../common/js/jquery/jquery.min.js"></script>
+    <script src="../../common/js/ui_renewal/swiper-bundle.min.js"></script>
+    <script src="../../common/js/ui_renewal/ui.js"></script>
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="../../common/js/ui_renewal/swiper-bundle.min.css">
+</head>
+<body class="renew">
+    <div class="skipnav"><a href="#Container">본문 바로가기</a></div>
+    <!-- Wrap [s] -->
+    <div id="Wrap">
+        <!-- header [s] -->
+        <header id="Header">
+            <div class="header_wrap">
+                <div class="btns_left">
+                    <button type="button" class="btn_prev"><span>이전</span></button>
+                </div>
+                <h1>추가 선택사항</h1>
+                <div class="btns_right">
+                    <button type="button" class="btn_menu"><span>메뉴</span></button>
+                </div>
+            </div>
+        </header>
+        <!-- // header [e] -->
+
+        <!-- main container [s] -->
+        <main id="Container">
+            <!-- container [s] -->
+            <section class="contents">
+                <div class="greeting_wrap">
+                    <h2 class="greeting_tit">
+                        <strong>기타 추가선택사항</strong>을<br>확인해 주세요.
+                    </h2>
+                    <!-- <span class="step" aria-label="전체 12단계 중 11단계">11/12</span> -->
+                    <span class="step" data-step="11"></span>
+                    <button type="button" class="guide"><span>안내</span></button>
+                </div>
+
+                <div class="form_wrap">
+                    <!-- 청구대행서비스 신청 -->
+                    <div class="form_item">
+                        <div class="form_label"><span>청구대행서비스 신청</span></div>
+                        <div class="radio_group tab_style">
+                            <div class="radio_item">
+                                <input type="radio" id="claimAgency1" name="claimAgency" value="N" checked>
+                                <label for="claimAgency1"><span>미신청</span></label>
+                            </div>
+                            <div class="radio_item">
+                                <input type="radio" id="claimAgency2" name="claimAgency" value="Y">
+                                <label for="claimAgency2"><span>신청</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 의료급여 수급권자 여부 // 펫보험 일경우 삭제-->
+                    <div class="form_item">
+                        <div class="form_label"><span>의료급여 수급권자 여부</span></div>
+                        <div class="radio_group tab_style">
+                            <div class="radio_item">
+                                <input type="radio" id="medicalAid1" name="medicalAid" value="N" checked>
+                                <label for="medicalAid1"><span>비대상</span></label>
+                            </div>
+                            <div class="radio_item">
+                                <input type="radio" id="medicalAid2" name="medicalAid" value="Y">
+                                <label for="medicalAid2"><span>대상</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 담당설계사에 청구내역 전달 // 펫보험 일경우 삭제 -->
+                    <div class="form_item">
+                        <div class="form_label"><span>담당설계사에 청구내역 전달</span></div>
+                        <div class="radio_group tab_style">
+                            <div class="radio_item">
+                                <input type="radio" id="claimDelivery1" name="claimDelivery" value="N" checked>
+                                <label for="claimDelivery1"><span>미전달</span></label>
+                            </div>
+                            <div class="radio_item">
+                                <input type="radio" id="claimDelivery2" name="claimDelivery" value="Y">
+                                <label for="claimDelivery2"><span>전달</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- floating bottom [s] -->
+                <div class="floating_btm">
+                    <div class="floating_inner">
+                        <button type="button" class="btn_ok" disabled><span>다음</span></button>
+                    </div>
+                </div>
+                <!-- // floating bottom [e] -->
+            </section>
+            <!-- container [e] -->
+        </main>
+        <!-- // main container [e] -->
+    </div>
+    <!-- // Wrap [e] -->
+
+    <!-- popup area [s] -->
+    <div id="layer_popup_container"></div>
+    <!-- popup area [e] -->
+
+    <!-- 퍼블리싱 UI 확인을 위한 script로 개발 시 참고만 해 주세요 -->
+    <script type="text/javascript">
+        $(function () {
+            if (new URLSearchParams(location.search).get('type') !== 'pet') return;
+            // 펫보험일경우  의료급여 수급권자 여부, 담당설계사에 청구내역 전달 삭제
+            $('.form_wrap').children('.form_item').slice(1, 3).remove();
+        });
+    </script>
+
+</body>
+</html>

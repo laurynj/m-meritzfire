@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>메리츠화재 공식 사이트</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="메리츠화재">
+    <meta name="description" content="메리츠화재 공식 모바일사이트입니다. 고객서비스 및 보험가입안내 제공. 암보험, 치매보험, 펫보험, 건강보험, 치아보험, 태아보험, 어린이보험, 운전자보험, 입원비보험, 수술비보험, 종합보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험 등. 인터넷고객센터를 이용한 계약조회, 보험금 청구, 보험계약 대출, 증명서 발급, 고객정보 변경, 보험료 납입, 전자민원 신청, 서비스망 찾기 등의 서비스를 만나보세요.">
+    <meta name="keywords" content="메리츠화재, 메리츠화재, 운전자보험, 암보험, 태아보험, 어린이보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험, 치매보험, 펫보험, 시니어보험, 간편보험, 입원비보험, 수술비보험, 종합보험, 건강보험, 자동차보험, 다이렉트자동차보험, 다이렉트 해외여행보험, 채팅상담, 보험료계산, 보험가입 상담신청">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../common/images/meritz_favicon.ico">
+    <link rel="apple-touch-icon" href="../../common/images/meritz_favicon.png">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../../default/css/renewal/base.css">
+
+    <!-- script -->
+    <script src="../../common/js/jquery/jquery.min.js"></script>
+    <script src="../../common/js/ui_renewal/swiper-bundle.min.js"></script>
+    <script src="../../common/js/ui_renewal/ui.js"></script>
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="../../common/js/ui_renewal/swiper-bundle.min.css">
+</head>
+<body class="renew">
+    <div class="skipnav"><a href="#Container">본문 바로가기</a></div>
+    <!-- Wrap [s] -->
+    <div id="Wrap">
+        <!-- header [s] -->
+        <header id="Header">
+            <div class="header_wrap">
+                <div class="btns_left">
+                    <button type="button" class="btn_prev"><span>이전</span></button>
+                </div>
+                <h1>입력된 정보 확인</h1>
+                <div class="btns_right">
+                    <button type="button" class="btn_menu"><span>메뉴</span></button>
+                </div>
+            </div>
+        </header>
+        <!-- // header [e] -->
+
+        <!-- main container [s] -->
+        <main id="Container">
+            <!-- container [s] -->
+            <section class="contents">
+                <div class="greeting_wrap">
+                    <h2 class="greeting_tit">
+                        <strong>입력한 정보</strong>를<br>모두 확인해 주세요.
+                    </h2>
+                    <!-- <span class="step" aria-label="전체 12단계 중 12단계">12/12</span> -->
+                    <span class="step" data-step="12"></span>
+                </div>
+
+                <!-- 상세내용 -->
+                <h3 class="m_tit">상세내용</h3>
+                <div class="item_val wide">
+                    <dl>
+                        <div><dt>치료 받은분</dt><dd>김메리</dd></div>
+                        <div><dt>사고 일자</dt><dd>2026.12.31</dd></div>
+                        <div><dt>최초 진단일자</dt><dd>2026.10.31</dd></div><!-- 기본형/펫보험 일반상해 : 최초 진단일자 삭제 -->
+                        <div><dt>사고 유형</dt><dd>업무상해</dd></div>
+                        <div><dt>사고 내용</dt><dd>몸살감기</dd></div>
+                        <!-- 펫보험일 경우 직업 및 직무 ~ 탑승 수단 항목 삭제 -->
+                        <!-- 기본형일 경우 직업 및 직무 ~ 방문 병원 항목 삭제-->
+                        <div><dt>직업 및 직무</dt><dd>택배기사, 물류센터 정리</dd></div>
+                        <div><dt>사고 장소</dt><dd>아파트</dd></div>
+                        <div><dt>사고 상황</dt><dd>탑승중</dd></div>
+                        <div><dt>탑승 수단</dt><dd>대중교통 / 택시</dd></div>
+                        <div><dt>방문 병원</dt><dd>메리크리스마스동물병원</dd></div>
+                    </dl>
+                    <dl>
+                        <div><dt>보험금 입금계좌</dt><dd class="full">우리은행 1002***484221 김메리</dd></div>
+                        <div><dt>휴대폰 번호</dt><dd>010-8888-8888</dd></div>
+                        <div><dt>이메일 주소</dt><dd>abcd1234@gmail.com</dd></div>
+                    </dl>
+                    <dl class="align_end">
+                        <div><dt>청구대행 서비스</dt><dd>미신청</dd></div>
+                        <!-- 펫보일 경우 의료 수급권자, 담당설계사 청구내역 삭제 -->
+                        <div><dt>의료 수급권자</dt><dd>비대상</dd></div>
+                        <div><dt>담당설계사 청구내역</dt><dd>미전달</dd></div>
+                    </dl>
+                </div>
+
+                <!-- 첨부서류 확인 -->
+                <h3 class="m_tit">
+                    첨부서류 확인
+                    <button type="button" class="tag"><span>추가첨부 및 미리보기</span></button>
+                </h3>
+                <div class="addfile_list view">
+                    <dl class="flie_data">
+                        <div>
+                            <dt class="flie_name">첨부서류 01.jpg</dt>
+                            <dd><button type="button" class="del_btn"><span class="hidden">삭제</span></button></dd>
+                        </div>
+                        <div>
+                            <dt class="flie_name">첨부서류첨부서류첨부서류첨부서류첨부서류 02.jpg</dt>
+                            <dd><button type="button" class="del_btn"><span class="hidden">삭제</span></button></dd>
+                        </div>
+                        <div>
+                            <dt class="flie_name">첨부서류첨부서류첨부서류첨부서류 03.pdf</dt>
+                            <dd><button type="button" class="del_btn"><span class="hidden">삭제</span></button></dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- floating bottom [s] -->
+                <div class="floating_btm">
+                    <div class="floating_inner half">
+                        <button type="button" class="btn_line"><span>다시 청구</span></button>
+                        <button type="button" class="btn_ok"><span>보험금 청구</span></button>
+                    </div>
+                </div>
+                <!-- // floating bottom [e] -->
+            </section>
+            <!-- container [e] -->
+        </main>
+        <!-- // main container [e] -->
+    </div>
+    <!-- // Wrap [e] -->
+
+    <!-- popup area [s] -->
+    <div id="layer_popup_container"></div>
+    <!-- popup area [e] -->
+
+    <!-- 퍼블리싱 UI 확인을 위한 script로 개발 시 참고만 해 주세요 -->
+    <script type="text/javascript">
+        $(function () {
+            const type = new URLSearchParams(location.search).get('type');
+            const $dl = $('.item_val.wide').children('dl');
+
+            if (type === 'pet' || type === 'pet-injury') {
+                // 펫보험: 직업 및 직무 ~ 탑승 수단 삭제
+                $dl.eq(0).children('div').slice(5, 9).remove();
+
+                // 펫보험: 의료 수급권자 ~ 담당설계사 청구내역 삭제
+                $dl.eq(2).children('div').slice(1, 3).remove();
+
+                // 펫보험 일반상해: 최초 진단일자 추가 삭제
+                if (type === 'pet-injury') {
+                    $dl.eq(0).children('div').eq(2).remove();
+                }
+            }
+
+            if (type === 'basic') {
+                // 기본형: 직업 및 직무 ~ 방문 병원 삭제
+                $dl.eq(0).children('div').slice(5, 10).remove();
+                // 기본형: 최초 진단일자 삭제
+                $dl.eq(0).children('div').eq(2).remove();
+            }
+        });
+    </script>
+</body>
+</html>

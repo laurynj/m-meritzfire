@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메리츠화재 Front Renewal IA</title>
+    <style>
+        * {box-sizing:border-box;}
+        html, body {height:100%;}
+        body {margin:0; background:#f5f6f8; color:#222; font-family:"Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;}
+        a {color:inherit;}
+        .blind {position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0 0 0 0);}
+        .wrap {display:flex; gap:20px; width:100%; min-width:0; min-height:100%; padding:24px; overflow-x:clip;}
+        .viewer_area {position:sticky; top:24px; align-self:flex-start; flex:0 0 380px;}
+        .viewer_head, .list_head {display:flex; align-items:center; justify-content:space-between; height:42px;}
+        .viewer_head h1, .list_head h2 {margin:0; font-size:18px;}
+        .viewer_file, .total {color:#666; font-size:13px;}
+        .viewer_file {max-width:230px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+        .html_viewer {display:block; width:380px; height:740px; border:1px solid #d8dce3; border-radius:0; background:#fff; box-shadow:0 4px 18px rgba(0, 0, 0, .08);}
+        .list_area {display:flex; flex:1; flex-direction:column; min-width:0; height:calc(100vh - 48px);}
+        .list_head {flex:none;}
+        .table_wrap {flex:1; width:100%; min-height:0; overflow-x:hidden; overflow-y:auto; border:1px solid #d8dce3; border-radius:0; background:#fff;}
+        table {width:100%; border-collapse:collapse; table-layout:fixed; font-size:12px;}
+        th, td {padding:5px; border-right:1px solid #e8eaee; border-bottom:1px solid #e8eaee; overflow-wrap:anywhere;}
+        th {text-align:center;}
+        td {text-align:left; background: #fff;}
+        th:last-child, td:last-child {border-right:0;}
+        thead th {position:sticky; top:0; z-index:1; background:#292d36; color:#fff; font-weight:600;}
+        tbody tr:last-child td {border-bottom:0;}
+        tbody tr:hover, tbody tr.active {background:#fff4f1;}
+        .file_cell {white-space:nowrap;}
+        .file_link {display:inline-block; max-width:calc(100% - 28px); padding:2px 0; overflow:hidden; color:#1769aa; text-overflow:ellipsis; vertical-align:middle; white-space:nowrap;}
+        .file_link:hover {text-decoration:underline;}
+        .new_window {position:relative; display:inline-block; width:20px; height:20px; margin-left:4px; border:1px solid #c8cdd5; border-radius:4px; background:#fff; vertical-align:middle;}
+        .new_window::before {content:""; position:absolute; left:5px; bottom:4px; width:7px; height:7px; border:1px solid #666;}
+        .new_window::after {content:"↗"; position:absolute; top:-4px; right:1px; color:#333; font-size:14px; font-weight:700;}
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <section class="viewer_area" aria-labelledby="viewer-title">
+            <div class="viewer_head">
+                <h1 id="viewer-title">HTML Viewer</h1>
+                <span class="viewer_file">01-10-01.html</span>
+            </div>
+            <iframe
+                class="html_viewer"
+                src="01/01-10-01.html"
+                title="HTML 화면 미리보기"
+            ></iframe>
+        </section>
+
+        <section class="list_area" aria-labelledby="list-title">
+            <div class="list_head">
+                <h2 id="list-title">Front Renewal 화면 목록</h2>
+                <span class="total">총 26개 화면</span>
+            </div>
+
+            <div class="table_wrap">
+                <table>
+                    <caption class="blind">보험금청구 화면 작업 목록</caption>
+                    <colgroup>
+                        <col style="width:9%">
+                        <col style="width:14%">
+                        <col style="width:13%">
+                        <col style="width:13%">
+                        <col style="width:9%">
+                        <col style="width:13%">
+                        <col style="width:6%">
+                        <col style="width:13%">
+                        <col style="width:6%">
+                        <col style="width:4%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">Depth1</th>
+                            <th scope="col">Depth2</th>
+                            <th scope="col">Depth3</th>
+                            <th scope="col">Depth4</th>
+                            <th scope="col">화면번호</th>
+                            <th scope="col">파일명</th>
+                            <th scope="col">완료일</th>
+                            <th scope="col">비고</th>
+                            <th scope="col">작업자</th>
+                            <th scope="col">상태</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="active">
+                            <td>보상/보험금청구</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>청구항목 선택</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-01</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-01.html">01-10-01.html</a>
+                                <a class="new_window" href="01/01-10-01.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>청구 전 확인사항</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-02</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-02.html">01-10-02.html</a>
+                                <a class="new_window" href="01/01-10-02.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>청구 전 확인사항-타인/재산 피해</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-02</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-02.html?type=damage">01-10-02.html</a>
+                                <a class="new_window" href="01/01-10-02.html?type=damage" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>청구항목 선택</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-03</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-03.html">01-10-03.html</a>
+                                <a class="new_window" href="01/01-10-03.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 치료받는분 선택(실손24 연계병원)</td>
+                            <td></td>
+                            <td>01-10-032</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-032.html">01-10-032.html</a>
+                                <a class="new_window" href="01/01-10-032.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 치료받는분 선택</td>
+                            <td></td>
+                            <td>01-10-032</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-032.html?type=direct">01-10-032.html</a>
+                                <a class="new_window" href="01/01-10-032.html?type=direct" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>치료대상자</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-04</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-04.html">01-10-04.html</a>
+                                <a class="new_window" href="01/01-10-04.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 치료대상자 안내</td>
+                            <td></td>
+                            <td>01-10-026</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-026.html">01-10-026.html</a>
+                                <a class="new_window" href="01/01-10-026.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 필수 약관 동의</td>
+                            <td></td>
+                            <td>01-01-004</td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 제출방식 선택</td>
+                            <td></td>
+                            <td>01-10-005</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-005.html">01-10-005.html</a>
+                                <a class="new_window" href="01/01-10-005.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 필요서류 전송</td>
+                            <td></td>
+                            <td>01-10-025</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-025.html">01-10-025.html</a>
+                                <a class="new_window" href="01/01-10-025.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 서류 안내</td>
+                            <td></td>
+                            <td>01-10-027</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-027.html">01-10-027.html</a>
+                                <a class="new_window" href="01/01-10-027.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 파일 첨부</td>
+                            <td></td>
+                            <td>01-01-044</td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>사고유형</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-07</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-07.html">01-10-07.html</a>
+                                <a class="new_window" href="01/01-10-07.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 사고유형 안내</td>
+                            <td></td>
+                            <td>01-10-011</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-011.html">01-10-011.html</a>
+                                <a class="new_window" href="01/01-10-011.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>사고일자</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-06</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-06.html">01-10-06.html</a>
+                                <a class="new_window" href="01/01-10-06.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><strong>사고내용</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="file_cell"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>- 질병 및 일반상해</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-08</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-08.html?type=disease">01-10-08.html</a>
+                                <a class="new_window" href="01/01-10-08.html?type=disease" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>- 교통 상해</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-08</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-08.html?type=traffic">01-10-08.html</a>
+                                <a class="new_window" href="01/01-10-08.html?type=traffic" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>- 업무중 상해</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-08</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-08.html?type=work">01-10-08.html</a>
+                                <a class="new_window" href="01/01-10-08.html?type=work" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>입금계좌 선택</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-09</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-09.html">01-10-09.html</a>
+                                <a class="new_window" href="01/01-10-09.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 입금계좌 안내</td>
+                            <td></td>
+                            <td>01-10-028</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-028.html">01-10-028.html</a>
+                                <a class="new_window" href="01/01-10-028.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><strong>계좌정보 입력</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>- 직접입력</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-10</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-10.html?type=direct">01-10-10.html</a>
+                                <a class="new_window" href="01/01-10-10.html?type=direct" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>- 주민등록번호 비활성</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-10</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-10.html?type=disabled">01-10-10.html</a>
+                                <a class="new_window" href="01/01-10-10.html?type=disabled" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>- 주민등록번호값 입력</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-10</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-10.html?type=filled">01-10-10.html</a>
+                                <a class="new_window" href="01/01-10-10.html?type=filled" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 금융기관 선택</td>
+                            <td></td>
+                            <td>01-01-020</td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>연락처정보 입력</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-11</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-11.html">01-10-11.html</a>
+                                <a class="new_window" href="01/01-10-11.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>추가 선택사항</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-12</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-12.html">01-10-12.html</a>
+                                <a class="new_window" href="01/01-10-12.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 기타 안내</td>
+                            <td></td>
+                            <td>01-10-029</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-029.html">01-10-029.html</a>
+                                <a class="new_window" href="01/01-10-029.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 파일 첨부</td>
+                            <td></td>
+                            <td>01-01-044</td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>입력된 정보 확인</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-13</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-13.html?type=basic">01-10-13.html</a>
+                                <a class="new_window" href="01/01-10-13.html?type=basic" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>입력된 정보 확인-full case</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-13</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-13.html">01-10-13.html</a>
+                                <a class="new_window" href="01/01-10-13.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[Confirm] 다시청구</td>
+                            <td></td>
+                            <td>01-10-0030</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-0030.html">01-10-0030.html</a>
+                                <a class="new_window" href="01/01-10-0030.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[Confirm] 미완료 청구이력</td>
+                            <td></td>
+                            <td>01-10-0031</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-0031.html">01-10-0031.html</a>
+                                <a class="new_window" href="01/01-10-0031.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><strong>교통 상해</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>사고장소</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-14</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-14.html">01-10-14.html</a>
+                                <a class="new_window" href="01/01-10-14.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>사고상황</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-15</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-15.html">01-10-15.html</a>
+                                <a class="new_window" href="01/01-10-15.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>운전수단</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-16</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-16.html">01-10-16.html</a>
+                                <a class="new_window" href="01/01-10-16.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>탑승수단</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-17</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-17.html">01-10-17.html</a>
+                                <a class="new_window" href="01/01-10-17.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>대중교통 종류</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-18</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-18.html">01-10-18.html</a>
+                                <a class="new_window" href="01/01-10-18.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><strong>업무중 상해</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>직업 및 직무</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-19</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-19.html">01-10-19.html</a>
+                                <a class="new_window" href="01/01-10-19.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><strong>펫보험</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>사고유형</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-07</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-07.html?type=pet">01-10-07.html</a>
+                                <a class="new_window" href="01/01-10-07.html?type=pet" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 사고유형 안내</td>
+                            <td></td>
+                            <td>01-10-011</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-011.html?type=pet">01-10-011.html</a>
+                                <a class="new_window" href="01/01-10-011.html?type=pet" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>치료 대상자</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-20</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-20.html">01-10-20.html</a>
+                                <a class="new_window" href="01/01-10-20.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[Alert] 펫보험 안내</td>
+                            <td></td>
+                            <td>01-10-0043</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-0043.html">01-10-0043.html</a>
+                                <a class="new_window" href="01/01-10-0043.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 서류 안내</td>
+                            <td></td>
+                            <td>01-10-030</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-030.html">01-10-030.html</a>
+                                <a class="new_window" href="01/01-10-030.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>사고일자</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-21</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-21.html">01-10-21.html</a>
+                                <a class="new_window" href="01/01-10-21.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>사고일자(사고일자만 표시)</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-21</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-21.html?type=basic">01-10-21.html</a>
+                                <a class="new_window" href="01/01-10-21.html?type=basic" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>사고내용</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-08</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-08.html?type=disease">01-10-08.html</a>
+                                <a class="new_window" href="01/01-10-08.html?type=disease" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>방문병원</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-22</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-22.html">01-10-22.html</a>
+                                <a class="new_window" href="01/01-10-22.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>추가 선택사항</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-12</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-12.html?type=pet">01-10-12.html</a>
+                                <a class="new_window" href="01/01-10-12.html?type=pet" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>입력된 정보 확인</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-13</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-13.html?type=pet">01-10-13.html</a>
+                                <a class="new_window" href="01/01-10-13.html?type=pet" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><strong>제3자 대리청구</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>접수자 확인</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-23</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-23.html">01-10-23.html</a>
+                                <a class="new_window" href="01/01-10-23.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>치료 대상자</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-10-24</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-10-24.html">01-10-24.html</a>
+                                <a class="new_window" href="01/01-10-24.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>제3자 휴대폰 인증</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-01-28</td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td>피보험자 관계 제거, CTA 버튼 수정</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업B]필수 약관 동의</td>
+                            <td></td>
+                            <td>00-06-0002</td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업B] 제3자 개인정보 처리 동의</td>
+                            <td></td>
+                            <td>01-01-00029</td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>피보험자 정보 입력</td>
+                            <td></td>
+                            <td></td>
+                            <td>01-01-31</td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td>CTA 버튼 변경</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업B] 보험금청구 접수 대행 동의/인증 요청</td>
+                            <td></td>
+                            <td>01-01-00032</td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업B] 동의/인증 대기</td>
+                            <td></td>
+                            <td>01-01-00034</td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><strong>청구현황확인</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>청구현황 목록</td>
+                            <td></td>
+                            <td>01-11-01</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-11-01.html">01-11-01.html</a>
+                                <a class="new_window" href="01/01-11-01.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>청구현황 목록-검색결과없음</td>
+                            <td></td>
+                            <td>01-11-01</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-11-01.html?type=noresult">01-11-01.html</a>
+                                <a class="new_window" href="01/01-11-01.html?type=noresult" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 청구 상세내역 - 접수</td>
+                            <td></td>
+                            <td>01-11-002</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-11-002.html">01-11-002.html</a>
+                                <a class="new_window" href="01/01-11-002.html" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 청구 상세내역 - 서류미접수</td>
+                            <td></td>
+                            <td>01-11-003</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-11-002.html?type=003">01-11-003.html</a>
+                                <a class="new_window" href="01/01-11-002.html?type=003" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 청구 상세내역 - 진행중</td>
+                            <td></td>
+                            <td>01-11-004</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-11-002.html?type=004">01-11-004.html</a>
+                                <a class="new_window" href="01/01-11-002.html?type=004" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 청구 상세내역 - 처리중</td>
+                            <td></td>
+                            <td>01-11-005</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-11-002.html?type=005">01-11-005.html</a>
+                                <a class="new_window" href="01/01-11-002.html?type=005" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 청구 상세내역 - 면책</td>
+                            <td></td>
+                            <td>01-11-006</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-11-002.html?type=006">01-11-006.html</a>
+                                <a class="new_window" href="01/01-11-002.html?type=006" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 청구 상세내역 - 심사완료</td>
+                            <td></td>
+                            <td>01-11-007</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-11-002.html?type=007">01-11-007.html</a>
+                                <a class="new_window" href="01/01-11-002.html?type=007" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 청구 상세내역 - 종결</td>
+                            <td></td>
+                            <td>01-11-008</td>
+                            <td class="file_cell">
+                                <a class="file_link" href="01/01-11-002.html?type=008">01-11-008.html</a>
+                                <a class="new_window" href="01/01-11-002.html?type=008" target="_blank"></a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>[팝업F] 증명서 미리보기</td>
+                            <td></td>
+                            <td>04-01-003</td>
+                            <td class="file_cell">
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const viewer = document.querySelector('.html_viewer');
+        const viewerFile = document.querySelector('.viewer_file');
+        const tableBody = document.querySelector('tbody');
+        const total = document.querySelector('.total');
+
+        total.textContent = `총 ${tableBody.querySelectorAll('.file_link').length}개 화면`;
+
+        tableBody.addEventListener('click', function (event) {
+            const fileLink = event.target.closest('.file_link');
+
+            if (!fileLink) return;
+
+            event.preventDefault();
+            viewer.src = fileLink.getAttribute('href');
+            viewerFile.textContent = fileLink.textContent;
+
+            tableBody.querySelector('.active')?.classList.remove('active');
+            fileLink.closest('tr').classList.add('active');
+        });
+    </script>
+</body>
+</html>

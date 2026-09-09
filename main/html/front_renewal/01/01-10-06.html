@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>메리츠화재 공식 사이트</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="메리츠화재">
+    <meta name="description" content="메리츠화재 공식 모바일사이트입니다. 고객서비스 및 보험가입안내 제공. 암보험, 치매보험, 펫보험, 건강보험, 치아보험, 태아보험, 어린이보험, 운전자보험, 입원비보험, 수술비보험, 종합보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험 등. 인터넷고객센터를 이용한 계약조회, 보험금 청구, 보험계약 대출, 증명서 발급, 고객정보 변경, 보험료 납입, 전자민원 신청, 서비스망 찾기 등의 서비스를 만나보세요.">
+    <meta name="keywords" content="메리츠화재, 메리츠화재, 운전자보험, 암보험, 태아보험, 어린이보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험, 치매보험, 펫보험, 시니어보험, 간편보험, 입원비보험, 수술비보험, 종합보험, 건강보험, 자동차보험, 다이렉트자동차보험, 다이렉트 해외여행보험, 채팅상담, 보험료계산, 보험가입 상담신청">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../common/images/meritz_favicon.ico">
+    <link rel="apple-touch-icon" href="../../common/images/meritz_favicon.png">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../../default/css/renewal/base.css">
+
+    <!-- script -->
+    <script src="../../common/js/jquery/jquery.min.js"></script>
+    <script src="../../common/js/ui_renewal/swiper-bundle.min.js"></script>
+    <script src="../../common/js/ui_renewal/ui.js"></script>
+    <!-- datepicker -->
+    <script src="../../common/js/jquery/jquery-ui.min.js"></script>
+    <script src="../../common/js/ui_renewal/datepicker.js"></script>
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="../../common/js/ui_renewal/swiper-bundle.min.css">
+</head>
+<body class="renew">
+    <div class="skipnav"><a href="#Container">본문 바로가기</a></div>
+    <!-- Wrap [s] -->
+    <div id="Wrap">
+        <!-- header [s] -->
+        <header id="Header">
+            <div class="header_wrap">
+                <div class="btns_left">
+                    <button type="button" class="btn_prev"><span>이전</span></button>
+                </div>
+                <h1>사고일자</h1>
+                <div class="btns_right">
+                    <button type="button" class="btn_menu"><span>메뉴</span></button>
+                </div>
+            </div>
+        </header>
+        <!-- // header [e] -->
+
+        <!-- main container [s] -->
+        <main id="Container">
+            <!-- container [s] -->
+            <section class="contents">
+                <div class="greeting_wrap">
+                    <h2 class="greeting_tit">
+                        <strong>치료 및 사고 발생</strong>이<br>언제 있으셨나요?
+                    </h2>
+                    <p class="sub_txt">정확한 날짜를 입력해주시고, 기억나지 않는 경우 대략적인 날짜로 입력해도 됩니다.</p>
+                    <!-- <span class="step" aria-label="전체 12단계 중 2단계">02/12</span> -->
+                    <span class="step" data-step="2"></span>
+                </div>
+
+                <div class="form_wrap">
+                    <!-- 사고일자 -->
+                    <div class="form_item date_time vertical"><!-- 유효성 체크 후 에러시 class값에 'error'추가 -->
+                        <label for="accidentDate" class="form_label"><span>사고일자 (최초 진료일자)</span></label>
+                        <div class="inp_box">
+                            <input type="number" id="accidentDate" name="accidentDate" class="datepicker1 inp_txt num_type" data-default-today="false" inputmode="numeric" maxlength="8" placeholder="예시) 20260809">
+                            <!-- <button type="button" class="calendar"><span class="hidden">달력팝업</span></button> -->
+                        </div>
+                        <p class="err_txt">에러문구</p>
+                    </div>
+                </div>
+
+                <!-- floating bottom [s] -->
+                <div class="floating_btm">
+                    <div class="floating_inner">
+                        <button type="button" class="btn_ok" disabled><span>다음</span></button>
+                    </div>
+                </div>
+                <!-- // floating bottom [e] -->
+            </section>
+            <!-- container [e] -->
+        </main>
+        <!-- // main container [e] -->
+    </div>
+    <!-- // Wrap [e] -->
+
+    <!-- popup area [s] -->
+    <div id="layer_popup_container"></div>
+    <!-- popup area [e] -->
+
+    <!-- 퍼블리싱 UI 확인을 위한 script로 개발 시 참고만 해 주세요 -->
+    <script type="text/javascript">
+    </script>
+</body>
+</html>

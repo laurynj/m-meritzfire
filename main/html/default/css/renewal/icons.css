@@ -1,0 +1,303 @@
+@charset "utf-8";
+  
+:root {
+    /* logo */
+    --logo-h-url: url('../../images/renewal/common/logo_h.svg');
+    --logo-v-url: url('../../images/renewal/common/logo_v.svg');
+
+    /* header  */
+    --header-menu: url('../../images/renewal/common/ico_menu.svg');
+    --header-prev: url('../../images/renewal/common/ico_pre.svg');
+    --header-mypage: url('../../images/renewal/common/ico_mypage.svg');
+    --header-alarm: url('../../images/renewal/common/ico_alarm.svg');
+    --header-setting: url('../../images/renewal/common/ico_setting.svg');
+
+    /* menu tree */
+    --ico-home: url('../../images/renewal/main/ico_home.svg');
+    --ico-logout: url('../../images/renewal/main/ico_logout.svg');
+    --ico-login: url('../../images/renewal/main/ico_login.svg');
+    --ico-security: url('../../images/renewal/main/ico_security.svg');
+    --menu-contract: url('../../images/renewal/main/menu_contract.svg');
+    --menu-payment: url('../../images/renewal/main/menu_payment.svg');
+    --menu-loan: url('../../images/renewal/main/menu_loan.svg');
+    --menu-customer: url('../../images/renewal/main/menu_customer.svg');
+    --menu-square: url('../../images/renewal/main/menu_square.svg');
+
+    /* main */
+    --main-contract: url('../../images/renewal/main/main_contract.svg');
+    --main-request: url('../../images/renewal/main/main_request.svg');
+    --main-payment: url('../../images/renewal/main/main_payment.svg');
+    --main-monitoring: url('../../images/renewal/main/main_monitoring.svg');
+    --main-withdraw: url('../../images/renewal/main/main_withdraw.svg');
+    --main-autosend: url('../../images/renewal/main/main_autosend.svg');
+    --main-loan: url('../../images/renewal/main/main_loan.svg');
+    --main-document: url('../../images/renewal/main/main_document.svg');
+    --main-drive: url('../../images/renewal/main/main_drive.svg');
+    --main-docinfo: url('../../images/renewal/main/main_docinfo.svg');
+    --main-withdrawinfo: url('../../images/renewal/main/main_withdrawinfo.svg');
+    --main-mobileinfo: url('../../images/renewal/main/main_mobileinfo.svg');
+    --main-charge: url('../../images/renewal/main/main_charge.svg');
+    --main-refund: url('../../images/renewal/main/main_refund.svg');
+    --main-refund2: url('../../images/renewal/main/main_refund2.svg');
+    --ico-copyright: url('../../images/renewal/main/ico_copyright.svg');
+    --ico-accident: url('../../images/renewal/main/ico_accident.svg');
+    --ico-breakdown: url('../../images/renewal/main/ico_breakdown.svg');
+    --ico-mall: url('../../images/renewal/main/ico_mall.svg');
+    --ars-mic: url('../../images/renewal/main/ars_mic.svg');
+    --ars-counselor: url('../../images/renewal/main/ars_counselor.svg');
+    --ars-hangup: url('../../images/renewal/main/ars_hangup.svg');
+    --ico-digital: url('../../images/renewal/main/ico_digital.svg');
+    --ico-voice: url('../../images/renewal/main/ico_voice.svg');
+    --ico-dispatch: url('../../images/renewal/main/ico_dispatch.svg');
+    --main-dispatch: url('../../images/renewal/main/main_dispatch.svg');
+    --main-accident: url('../../images/renewal/main/main_accident.svg');
+    --main-account: url('../../images/renewal/main/main_account.svg');
+    --main-counseling: url('../../images/renewal/main/main_counseling.svg');
+
+    /* 20241018 스타일추가 */
+    --main-dog: url('../../images/renewal/main/main_dog.svg');
+    --main-cat: url('../../images/renewal/main/main_cat.svg');
+    --main-driver: url('../../images/renewal/main/main_driver.svg');
+    --main-car: url('../../images/renewal/main/main_car.svg');
+    --main-journey: url('../../images/renewal/main/main_journey.svg');
+
+    /* contents */
+    --ico-search: url('../../images/renewal/common/ico_search.svg');
+    --ico-search-s: url('../../images/renewal/common/ico_search_s.svg');
+    --ico-search-wt: url('../../images/renewal/common/ico_search_wt.svg');
+    --ico-tel: url('../../images/renewal/common/ico_call.svg');
+    --ico-tel-wt: url('../../images/renewal/common/ico_call_wt.svg');
+    --ico-next: url('../../images/renewal/common/ico_next.svg');
+    --ico-arrow-bk: url('../../images/renewal/common/ico_arrow_bk.svg');
+    --ico-arrow-wt: url('../../images/renewal/common/ico_arrow_wt.svg');
+    --ico-more: url('../../images/renewal/common/ico_more.svg');
+    --ico-selbox: url('../../images/renewal/common/ico_selbox.svg');
+    --ico-download: url('../../images/renewal/common/ico_download.svg');
+    --ico-calendar: url('../../images/renewal/common/ico_calendar.svg');
+    --ico-calendar2: url('../../images/renewal/common/ico_calendar2.svg');
+    --ico-filter: url('../../images/renewal/common/ico_filter.svg');
+
+    /* checkbox */
+    --check-off: url('../../images/renewal/common/check_off.svg');
+    --check-on: url('../../images/renewal/common/check_on.svg');
+    --check-off16: url('../../images/renewal/common/check_off16.svg');
+    --check-on16: url('../../images/renewal/common/check_on16.svg');
+    --check-circle-off: url('../../images/renewal/common/chkcircle_off.svg');
+    --check-circle-on: url('../../images/renewal/common/chkcircle_on.svg');
+    --check-circle-off-disabled: url('../../images/renewal/common/chkcircle_off_disabled.svg');
+    --check-circle-on-disabled: url('../../images/renewal/common/chkcircle_on_disabled.svg');
+    --check-circle2-off: url('../../images/renewal/common/chkcircle2_off.svg');
+    --check-circle2-on: url('../../images/renewal/common/chkcircle2_on.svg');
+
+    /* radio */
+    --radio-off: url('../../images/renewal/common/radio_off.svg');
+    --radio-on: url('../../images/renewal/common/radio_on.svg');
+
+    /* popup */
+    --ico-close-bk: url('../../images/renewal/common/ico_close_bk.svg');
+    --ico-close-wt: url('../../images/renewal/common/ico_close_wt.svg');
+    --noti-info: url('../../images/renewal/common/noti_info.svg');
+    --noti-error: url('../../images/renewal/common/noti_error.svg');
+    --noti-warning: url('../../images/renewal/common/noti_warning.svg');
+    --noti-complete: url('../../images/renewal/common/noti_complete.svg');
+    --noti-loading: url('../../images/renewal/common/noti_loading.svg');
+    --noti-errinfo: url('../../images/renewal/common/noti_errinfo.svg');
+
+
+    /* 인증 */
+    --conf-simple: url('../../images/renewal/common/conf_simple.svg');
+    --conf-finance: url('../../images/renewal/common/conf_finance.svg');
+    --conf-common: url('../../images/renewal/common/conf_common.svg');
+    --conf-naver: url('../../images/renewal/common/conf_naver.svg');
+    --conf-kakao: url('../../images/renewal/common/conf_kakao.svg');
+    --conf-phone: url('../../images/renewal/common/conf_phone.svg');
+    --conf-finger: url('../../images/renewal/common/conf_finger.svg');
+    --conf-toss: url('../../images/renewal/common/conf_toss.svg');
+    --conf-simple-s: url('../../images/renewal/common/conf_simple_s.svg');
+    --conf-finance-s: url('../../images/renewal/common/conf_finance_s.svg');
+    --conf-common-s: url('../../images/renewal/common/conf_common_s.svg');
+    --conf-naver-s: url('../../images/renewal/common/conf_naver_s.svg');
+    --conf-kakao-s: url('../../images/renewal/common/conf_kakao_s.svg');
+    --conf-phone-s: url('../../images/renewal/common/conf_phone_s.svg');
+    --conf-finger-s: url('../../images/renewal/common/conf_finger_s.svg');
+    --conf-toss-s: url('../../images/renewal/common/conf_toss_s.svg');
+
+    /* 보험금청구 - 필요서류 안내 */
+    --ico-disease: url('../../images/renewal/contents/ico_disease.svg');
+    --ico-tooth: url('../../images/renewal/contents/ico_tooth.svg');
+    --ico-traffic: url('../../images/renewal/contents/ico_traffic.svg');
+    --ico-injury: url('../../images/renewal/contents/ico_injury.svg');
+    --ico-pet: url('../../images/renewal/contents/ico_pet.svg');
+    --ico-travel: url('../../images/renewal/contents/ico_travel.svg');
+    --ico-car: url('../../images/renewal/contents/ico_car.svg');
+    --ico-property: url('../../images/renewal/contents/ico_property.svg');
+    --ico-recompense: url('../../images/renewal/contents/ico_recompense.svg');
+
+    /* 은행/증권사 선택 */
+    --ico-bnk: url('../../images/renewal/contents/ico_bnk.svg');       /* 부산은행/경남은행/BNK투자증권 */
+    --ico-bnp: url('../../images/renewal/contents/ico_bnp.svg');       /* BNP파리바은행 */
+    --ico-boa: url('../../images/renewal/contents/ico_boa.svg');       /* BOA은행 */
+    --ico-ccb: url('../../images/renewal/contents/ico_ccb.svg');       /* 중국건설은행 */
+    --ico-citi: url('../../images/renewal/contents/ico_citi.svg');     /* 한국씨티은행 */
+    --ico-cu: url('../../images/renewal/contents/ico_cu.svg');         /* 신협 */
+    --ico-deutsche: url('../../images/renewal/contents/ico_deutsche.svg');     /* 도이치은행 */
+    --ico-dgb: url('../../images/renewal/contents/ico_dgb.svg?v=1.1');       /* iM뱅크(구DGB대구은행)/하이투자증권 */
+    --ico-exim: url('../../images/renewal/contents/ico_exim.svg');     /* 한국수출입은행 */
+    --ico-fsb: url('../../images/renewal/contents/ico_fsb.svg');       /* 저축은행 */
+    --ico-hana: url('../../images/renewal/contents/ico_hana.svg');     /* 하나은행/하나금융투자 */
+    --ico-hsbc: url('../../images/renewal/contents/ico_hsbc.svg');     /* HSBC은행 */
+    --ico-ibk: url('../../images/renewal/contents/ico_ibk.svg');       /* IBK기업은행 */
+    --ico-icbc: url('../../images/renewal/contents/ico_icbc.svg');     /* 중국공상은행 */
+    --ico-jpm: url('../../images/renewal/contents/ico_jpm.svg');       /* 제이피모간체이스은행 */
+    --ico-kakao: url('../../images/renewal/contents/ico_kakao.svg');   /* 카카오뱅크/카카오페이증권 */
+    --ico-kb: url('../../images/renewal/contents/ico_kb.svg');         /* KB국민은행/KB증권 */
+    --ico-kbank: url('../../images/renewal/contents/ico_kbank.svg?v=1.1');   /* 케이뱅크 */
+    --ico-kdb: url('../../images/renewal/contents/ico_kdb.svg');       /* 산업은행 */
+    --ico-keb: url('../../images/renewal/contents/ico_keb.svg');       /* 외환은행 */
+    --ico-kj: url('../../images/renewal/contents/ico_kj.svg');         /* 광주은행/전북은행 */
+    --ico-mg: url('../../images/renewal/contents/ico_mg.svg');         /* 새마을금고 */
+    --ico-nh: url('../../images/renewal/contents/ico_nh.svg');         /* NH농협은행/NH투자증권 */
+    --ico-post: url('../../images/renewal/contents/ico_post.svg');     /* 우체국은행 */
+    --ico-sc: url('../../images/renewal/contents/ico_sc.svg');         /* SC제일은행 */
+    --ico-sh: url('../../images/renewal/contents/ico_sh.svg');         /* 수협은행 */
+    --ico-shinhan: url('../../images/renewal/contents/ico_shinhan.svg');   /* 신한은행/제주은행신한금융투자 */
+    --ico-sj: url('../../images/renewal/contents/ico_sj.svg');         /* 산림조합중앙회 */
+    --ico-toss: url('../../images/renewal/contents/ico_toss.svg');     /* 토스뱅크 */
+    --ico-woori: url('../../images/renewal/contents/ico_woori.svg');   /* 우리은행 */
+    --ico-bookook: url('../../images/renewal/contents/ico_bookook.svg');   /* 부국증권 */
+    --ico-cape: url('../../images/renewal/contents/ico_cape.svg');     /* 케이프투자증권 */
+    --ico-daesin: url('../../images/renewal/contents/ico_daesin.svg'); /* 대신증권 */
+    --ico-db: url('../../images/renewal/contents/ico_db.svg');         /* DB금융투자 */
+    --ico-ebest: url('../../images/renewal/contents/ico_ebest.svg?v=1.1');   /* LS증권(구 이베스트증권) */
+    --ico-foss: url('../../images/renewal/contents/ico_foss.svg?v=1.1');     /* 한국포스증권 */
+    --ico-hanhwa: url('../../images/renewal/contents/ico_hanhwa.svg'); /* 한화투자증권 */
+    --ico-hyundai: url('../../images/renewal/contents/ico_hyundai.svg');   /* 현대차증권 */
+    --ico-kiwoom: url('../../images/renewal/contents/ico_kiwoom.svg'); /* 키움증권 */
+    --ico-korea: url('../../images/renewal/contents/ico_korea.svg');   /* 한국투자증권 */
+    --ico-ktb: url('../../images/renewal/contents/ico_ktb.svg');       /* KTB투자증권 */
+    --ico-kyobo: url('../../images/renewal/contents/ico_kyobo.svg');   /* 교보증권 */
+    --ico-meritz: url('../../images/renewal/contents/ico_meritz.svg'); /* 메리츠증권 */
+    --ico-mirae: url('../../images/renewal/contents/ico_mirae.svg');   /* 미래에셋증권 */
+    --ico-samsung: url('../../images/renewal/contents/ico_samsung.svg');   /* 삼성증권 */
+    --ico-shinyoung: url('../../images/renewal/contents/ico_shinyoung.svg');   /* 신영증권 */
+    --ico-sk: url('../../images/renewal/contents/ico_sk.svg');         /* SK증권 */
+    --ico-you: url('../../images/renewal/contents/ico_you.svg');       /* 유안타 */
+    --ico-youjin: url('../../images/renewal/contents/ico_youjin.svg'); /* 유진투자증권 */
+
+    /* 기타 */
+    --ico-add: url('../../images/renewal/common/ico_add.svg');
+    --ico-delete: url('../../images/renewal/common/ico_delete.svg');
+    --ico-fileadd: url('../../images/renewal/contents/ico_fileadd.svg');
+    --ico-filedel: url('../../images/renewal/contents/ico_filedel.svg');
+    --ico-alim: url('../../images/renewal/contents/ico_alim.svg');
+    --ico-alim-red: url('../../images/renewal/contents/ico_alim_red.svg');
+    --ico-pdf: url('../../images/renewal/contents/ico_pdf.svg');
+    --ico-equal: url('../../images/renewal/contents/ico_equal.svg');
+    --ico-sum: url('../../images/renewal/contents/ico_sum.svg');
+    --ico-register: url('../../images/renewal/contents/ico_register.svg');
+    --ico-review: url('../../images/renewal/contents/ico_review.svg');
+    --ico-allocation: url('../../images/renewal/contents/ico_allocation.svg');
+    --ico-processing: url('../../images/renewal/contents/ico_processing.svg');
+    --ico-copy: url('../../images/renewal/contents/ico_copy.svg');
+    --ico-longterm: url('../../images/renewal/contents/ico_longterm.svg');
+    --ico-coming: url('../../images/renewal/contents/ico_coming.svg');
+    --ico-fullpayment: url('../../images/renewal/contents/ico_fullpayment.svg');
+    --ico-fullcare: url('../../images/renewal/contents/ico_fullcare.svg');
+    --ico-srchdel: url('../../images/renewal/common/ico_srchdel.svg');
+    --ico-rp-all: url('../../images/renewal/contents/ico_rp_all.svg');
+    --ico-rp-cancer: url('../../images/renewal/contents/ico_rp_cancer.svg');
+    --ico-rp-nonrenewal: url('../../images/renewal/contents/ico_rp_nonrenewal.svg');
+    --ico-rp-tooth: url('../../images/renewal/contents/ico_rp_tooth.svg');
+    --ico-rp-pet: url('../../images/renewal/contents/ico_rp_pet.svg');
+    --ico-rp-car: url('../../images/renewal/contents/ico_rp_car.svg');
+    --ico-rp-driver: url('../../images/renewal/contents/ico_rp_driver.svg');
+    --ico-attach-car: url('../../images/renewal/contents/ico_attach_car.svg');
+    --ico-attach-car02: url('../../images/renewal/contents/ico_attach_car02.svg');
+    --ico-attach-car03: url('../../images/renewal/contents/ico_attach_car03.svg');
+    --ico-attach-car04: url('../../images/renewal/contents/ico_attach_car04.svg');
+    --ico-attach-car05: url('../../images/renewal/contents/ico_attach_car05.svg');
+    --ico-attach-dashboard: url('../../images/renewal/contents/ico_attach_dashboard.svg');
+    --ico-caregiver-task1: url('../../images/renewal/contents/ico_caregiver_task1.svg');
+    --ico-caregiver-task2: url('../../images/renewal/contents/ico_caregiver_task2.svg');
+    --ico-caregiver-task3: url('../../images/renewal/contents/ico_caregiver_task3.svg');
+    --ico-caregiver-task4: url('../../images/renewal/contents/ico_caregiver_task4.svg');
+    --ico-caregiver-task5: url('../../images/renewal/contents/ico_caregiver_task5.svg');
+    --ico-caregiver-task6: url('../../images/renewal/contents/ico_caregiver_task6.svg');
+    --ico-caregiver-task7: url('../../images/renewal/contents/ico_caregiver_task7.svg');
+    --ico-caregiver-task8: url('../../images/renewal/contents/ico_caregiver_task8.svg');
+    --ico-tooltip-arrow: url('../../images/renewal/contents/ico_tooltip_arrow.svg');
+    --ico-tooltip-arrow2: url('../../images/renewal/contents/ico_tooltip_arrow2.svg');
+
+    /* loading */
+    --loding-meritz: url('../../images/renewal/common/loading_meritz.svg');
+
+	/* swiper icon */
+	--main-swiper-prev: url('../../images/renewal/main/btn_swiper_prev.svg');
+	--main-swiper-next: url('../../images/renewal/main/btn_swiper_next.svg');
+	--main-swiper-play: url('../../images/renewal/main/btn_swiper_play.svg');
+	--main-swiper-stop: url('../../images/renewal/main/btn_swiper_stop.svg');
+
+    /* 20250327 공공마이데이타 관련 */
+    --ico-auth-simple: url('../../images/renewal/contents/ico_auth_simple.svg');
+    --ico-auth-finance: url('../../images/renewal/contents/ico_auth_finance.svg');
+    --ico-auth-naver: url('../../images/renewal/contents/ico_auth_naver.svg');
+    --ico-auth-comm: url('../../images/renewal/contents/ico_auth_comm.svg');
+    --ico-auth-phone: url('../../images/renewal/contents/ico_auth_phone.svg');
+    --ico-mydata-symbol: url('../../images/renewal/contents/ico_mydata_symbol.svg');
+    --ico-movenext-off: url('../../images/renewal/contents/ico_movenext_off.svg');
+    --ico-movenext-on: url('../../images/renewal/contents/ico_movenext_on.svg');
+    --ico-important: url('../../images/renewal/contents/ico_important.svg');
+
+    /* 20250612 알림센터,설정 관련 */
+    --ico-controls: url('../../images/renewal/contents/ico_controls.svg');
+    --ico-attach-file: url('../../images/renewal/contents/ico_attach_file.svg');
+    --ico-link-arr: url('../../images/renewal/contents/ico_link_arr.svg');
+    --ico-mertiz-logo: url('../../images/renewal/contents/ico_mertiz_logo.svg');
+    --ico-seemore-arr: url('../../images/renewal/contents/ico_seemore_arr.svg');
+
+    /* 20260211 토스트팝업 */
+    --ico-warn-sign: url('../../images/renewal/contents/ico_warn_sign.svg');
+    --ico-close-sm: url('../../images/renewal/contents/ico_close_sm.svg');
+    
+    /* 20260910 보상/보험금 청구 여기서부터 새로 추가 */
+
+    /* 보험금청구 서류안내 */
+    --ico-file-guide: url('../../images/renewal/contents/ico_guide_file.png');
+    --ico-guide-pet: url('../../images/renewal/contents/ico_guide_pet.png');
+    --ico-guide-hospital: url('../../images/renewal/contents/ico_guide_hospital.png');
+    --ico-guide-bed: url('../../images/renewal/contents/ico_guide_bed.png');
+    --ico-guide-disease: url('../../images/renewal/contents/ico_guide_disease.png');
+    --ico-guide-injury: url('../../images/renewal/contents/ico_guide_injury.png');
+    --ico-guide-traffic: url('../../images/renewal/contents/ico_guide_traffic.png');
+    --ico-guide-work: url('../../images/renewal/contents/ico_guide_work.png');
+    --ico-doc-auto: url('../../images/renewal/contents/ico_doc_auto.png');
+    --ico-doc-camera: url('../../images/renewal/contents/ico_doc_camera.png');
+
+    /* 보험금 청구항목 */
+    --ico-claim-health: url('../../images/renewal/contents/ico_claim_health.png');
+    --ico-claim-pet: url('../../images/renewal/contents/ico_claim_pet.png');
+    --ico-claim-care: url('../../images/renewal/contents/ico_claim_care.png');
+    --ico-claim-liability: url('../../images/renewal/contents/ico_claim_liability.png');
+    --ico-claim-property: url('../../images/renewal/contents/ico_claim_property.png');
+    --ico-claim-group: url('../../images/renewal/contents/ico_claim_group.png');
+    --ico-claim-docs: url('../../images/renewal/contents/ico_claim_docs.png');
+    --ico-claim-reqdocs: url('../../images/renewal/contents/ico_claim_reqdocs.png');
+    --ico-claim-status: url('../../images/renewal/contents/ico_claim_status.png');
+    --ico-claim-hospital: url('../../images/renewal/contents/ico_claim_hospital.png');
+    --ico-claim-silson: url('../../images/renewal/contents/ico_claim_silson.png');
+    --ico-claim-meritz: url('../../images/renewal/contents/ico_claim_meritz.png');
+    --ico-toast-doc: url('../../images/renewal/contents/ico_toast_doc.png');
+
+    --ico-delect2: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_769_3514)'%3E%3Cpath d='M11.9998 4L7.99992 7.99998L4 4' stroke='%23CCCCCC' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4.00016 12L8.00008 8.00002L12 12' stroke='%23CCCCCC' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_769_3514'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    --ico-info-ss: url("data:image/svg+xml,%3Csvg preserveAspectRatio='none' overflow='visible' style='display: block;' width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Icon16'%3E%3Ccircle id='Ellipse 324' cx='8' cy='8' r='8' fill='%23ACADAE'/%3E%3Cpath id='Union' fill-rule='evenodd' clip-rule='evenodd' d='M9.25 3.75001H6.75V9.25001H9.25V3.75001ZM8 13C8.55228 13 9 12.5523 9 12C9 11.4477 8.55228 11 8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    --ico-toast-close: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.7502 0.75L4.75029 4.74998L0.750366 0.75' stroke='%23999999' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M0.749979 8.75L4.7499 4.75002L8.74982 8.75' stroke='%23999999' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    --ico-filter2: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.6665 21.5833H23.3332' stroke='%23222222' stroke-width='1.75' stroke-linecap='round'/%3E%3Crect x='15.1665' y='18.6665' width='5.25' height='5.25' rx='2.625' fill='white' stroke='%23222222' stroke-width='1.75'/%3E%3Cpath d='M4.6665 14.0003H23.3332' stroke='%23222222' stroke-width='1.75' stroke-linecap='round'/%3E%3Crect x='8.1665' y='11.0835' width='5.25' height='5.25' rx='2.625' fill='white' stroke='%23222222' stroke-width='1.75'/%3E%3Cpath d='M4.6665 6.41683H23.3332' stroke='%23222222' stroke-width='1.75' stroke-linecap='round'/%3E%3Crect x='15.1665' y='3.5' width='5.25' height='5.25' rx='2.625' fill='white' stroke='%23222222' stroke-width='1.75'/%3E%3C/svg%3E");
+    --ico-file: url("data:image/svg+xml,%3Csvg width='9' height='11' viewBox='0 0 9 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.375 5.79053H6.375' stroke='%23666666' stroke-width='.747679' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2.375 7.95715H6.375' stroke='%23666666' stroke-width='.747679' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1.3741.37384H5.96044C6.22546.37384 6.47998.488132 6.66749.691257L8.0816 2.22309C8.26911 2.42622 8.37462 2.70192 8.37462 2.98901V9.04051C8.37462 9.63905 7.92709 10.1238 7.37455 10.1238H1.3741C.821557 10.1238.374023 9.63905.374023 9.04051V1.45717C.374023.858632.821557.37384 1.3741.37384Z' stroke='%23666666' stroke-width='.747679' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.37519 3.08217H6.37504C6.09902 3.08217 5.875 2.83951 5.875 2.54051V.37384' stroke='%23666666' stroke-width='.747679' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2.375 3.62384H3.875' stroke='%23666666' stroke-width='.747679' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+    /* 청구 진행상태 */
+    --ico-claim-complete: url('../../images/renewal/contents/ico_claim_complete.png');
+    --ico-claim-supplement: url('../../images/renewal/contents/ico_claim_supplement.png');
+    --ico-claim-review: url('../../images/renewal/contents/ico_claim_review.png');
+    --ico-claim-rejected: url('../../images/renewal/contents/ico_claim_rejected.png');
+
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>메리츠화재 공식 사이트</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="메리츠화재">
+    <meta name="description" content="메리츠화재 공식 모바일사이트입니다. 고객서비스 및 보험가입안내 제공. 암보험, 치매보험, 펫보험, 건강보험, 치아보험, 태아보험, 어린이보험, 운전자보험, 입원비보험, 수술비보험, 종합보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험 등. 인터넷고객센터를 이용한 계약조회, 보험금 청구, 보험계약 대출, 증명서 발급, 고객정보 변경, 보험료 납입, 전자민원 신청, 서비스망 찾기 등의 서비스를 만나보세요.">
+    <meta name="keywords" content="메리츠화재, 메리츠화재, 운전자보험, 암보험, 태아보험, 어린이보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험, 치매보험, 펫보험, 시니어보험, 간편보험, 입원비보험, 수술비보험, 종합보험, 건강보험, 자동차보험, 다이렉트자동차보험, 다이렉트 해외여행보험, 채팅상담, 보험료계산, 보험가입 상담신청">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../common/images/meritz_favicon.ico">
+    <link rel="apple-touch-icon" href="../../common/images/meritz_favicon.png">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../../default/css/renewal/base.css">
+
+    <!-- script -->
+    <script src="../../common/js/jquery/jquery.min.js"></script>
+    <script src="../../common/js/ui_renewal/swiper-bundle.min.js"></script>
+    <script src="../../common/js/ui_renewal/ui.js"></script>
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="../../common/js/ui_renewal/swiper-bundle.min.css">
+</head>
+<body class="renew">
+    <div class="skipnav"><a href="#Container">본문 바로가기</a></div>
+    <!-- Wrap [s] -->
+    <div id="Wrap">
+        <!-- header [s] -->
+        <header id="Header">
+            <div class="header_wrap">
+                <div class="btns_left"><button type="button" class="btn_prev"><span>이전</span></button></div>
+                <h1>청구 상세내역</h1>
+                <div class="btns_right"><button type="button" class="btn_menu"><span>메뉴</span></button></div>
+            </div>
+        </header>
+        <!-- // header [e] -->
+
+        <!-- main container [s] -->
+        <main id="Container">
+            <!-- container [s] -->
+            <section class="contents">
+                <h2 class="m_tit">청구 상세내역</h2>
+                <button type="button" class="pop_btn_ok" onclick="renewalUI.openPopup('submitMethod');"><span>openPopup</span></button>
+            </section>
+            <!-- container [e] -->
+        </main>
+        <!-- // main container [e] -->
+    </div>
+    <!-- // Wrap [e] -->
+
+    <!-- popup area [s] -->
+    <div id="layer_popup_container">
+        <div id="submitMethod">
+            <!-- popup publishing [s] -->
+            <div class="dimmed_area"><!-- popup open시 class값 'on' 추가 -->
+                <!--
+                    popup 형태에 따른 class 값
+                    1. 일반 팝업: 없음
+                    2. alert 팝업: alert
+                    3. confirm 팝업: confirm
+                    4. 전체 팝업: full
+                    5. floating 팝업: floating
+                -->
+                <div class="popup full"><!-- popup open시 class값 'open' 추가 -->
+                    <!-- popup header [s] -->
+                    <div class="pop_header">
+                        <h1>청구 상세내역</h1>
+                        <button type="button" class="pop_close"><span class="hidden">닫기</span></button>
+                    </div>
+                    <!-- // popup header [e] -->
+
+                    <!-- popup body [s] -->
+                    <div class="pop_body">
+                        <div class="tab_contents claim">
+                            <!-- 탭버튼 -->
+                            <div class="tab_list type_tab">
+                                <button type="button" class="tab_btn selected"><span>상세내용</span></button>
+                                <button type="button" class="tab_btn"><span>수령내역</span></button>
+                            </div>
+                            <!-- 탭내용 -->
+                            <div class="tab_cont pt0">
+                                <div class="tab_panel active">
+                                    <!-- 진행 안내: 접수·완료 .complete / 서류보완 .supplement / 담당자배정·심사 .review / 면책 .rejected -->
+                                    <div class="guide_box claim rejected">
+                                        <span class="guide_tit">면책 종결되었습니다.</span>
+                                    </div>
+
+                                    <!-- 청구 상세정보 -->
+                                    <div class="card_item no_shadow">
+                                        <div class="card_header">
+                                            <h2 class="card_tit">상해사고</h2>
+                                            <!-- 접수/서류미접수/심사진행중/면책/종결 : .receive/.notyet/.ongoing/.immunity/.terminate -->
+                                            <span class="chip immunity">면책</span>
+                                        </div>
+                                        <div class="card_body">
+                                            <dl>
+                                                <div><dt>사고번호</dt><dd>9999999999</dd></div>
+                                                <div><dt>증권번호</dt><dd>12345-12345</dd></div>
+                                                <div><dt>사고일자</dt><dd>2022년 12월 31일</dd></div>
+                                                <div><dt>피보험자</dt><dd>김메리</dd></div>
+                                                <div><dt>사고내용</dt><dd>침대에서 떨어져 뇌진탕</dd></div>
+                                                <div><dt>진단내용</dt><dd>M19.04 기타 관절의 일차성 관절염</dd></div>
+                                                <div><dt>보험금지급일</dt><dd>2022년 12월 31일</dd></div>
+                                                <div><dt>최종담당자</dt><dd>곽소은 (02-6941-3891)</dd></div>
+                                            </dl>
+                                        </div>
+                                        <!-- 진행현황 -->
+                                        <div class="item_half">
+                                            <p class="item_tit">진행현황</p>
+                                            <div class="item_process">
+                                                <ul class="list_num type2">
+                                                    <li class="done">접수</li>
+                                                    <li class="done">서류보완</li>
+                                                    <li class="done">담당자배정 (곽소은)</li>
+                                                    <li class="done">제출서류심사<span class="desc">계좌 확인 불가(고객 연락 부재중)</span></li>
+                                                    <li class="done">현장심사<span class="desc">수사기관 서류 발급 대기중</span></li>
+                                                    <li class="on done" title="현재단계">종결</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="tab_panel">
+                                    <!-- 지급내역 -->
+                                    <h2 class="m_tit mt24">
+                                        지급내역
+                                        <button type="button" class="tag"><span>지급내역서 발급</span></button>
+                                    </h2>
+
+                                    <div class="tbl_style2">
+                                        <table>
+                                            <caption class="hidden">보험금 지급내역</caption>
+                                            <colgroup>
+                                                <col style="width:27%">
+                                                <col style="width:25%">
+                                                <col style="width:25%">
+                                                <col style="width:23%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" class="txt_l">지급일자</th>
+                                                    <th scope="col">보험금</th>
+                                                    <th scope="col">은행</th>
+                                                    <th scope="col">담당자</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="txt_l">2023.08.08</td>
+                                                    <td>1,239,832,<br>413원</td>
+                                                    <td>KTB투자증권</td>
+                                                    <td><a href="tel:02-6941-3891" class="tel">곽소은</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="txt_l">2023.08.08</td>
+                                                    <td>1,239,832,<br>413원</td>
+                                                    <td>BNP파리바은행</td>
+                                                    <td><a href="tel:02-6941-3891" class="tel">곽소은</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="txt_l">2023.08.08</td>
+                                                    <td>1,239,832,<br>413원</td>
+                                                    <td>이베스트투자증권</td>
+                                                    <td><a href="tel:02-6941-3891" class="tel">곽소은</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="txt_l">2023.08.08</td>
+                                                    <td>1,239,832,<br>413원</td>
+                                                    <td>카카오페이증권</td>
+                                                    <td><a href="tel:02-6941-3891" class="tel">곽소은</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // 탭내용 -->
+                        </div>
+                    </div>
+                    <!-- // popup body [e] -->
+
+                    <!-- popup footer [s] -->
+                    <div class="pop_bottom">
+                        <div class="inner">
+                            <button type="button" class="pop_btn_ok"><span>서류 보완</span></button>
+                        </div>
+                    </div>
+                    <!-- // popup footer [e] -->
+                </div>
+                <div class="dimmed"></div>
+            </div>
+            <!-- popup publishing [e] -->
+        </div>
+    </div>
+    <!-- popup area [e] -->
+
+    <!-- 퍼블리싱 UI 확인을 위한 script로 개발 시 참고만 해 주세요. -->
+    <script type="text/javascript">
+        $(function () {
+            renewalUI.openPopup('submitMethod');
+        });
+    </script>
+</body>
+</html>

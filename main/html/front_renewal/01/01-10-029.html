@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>메리츠화재 공식 사이트</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="메리츠화재">
+    <meta name="description" content="메리츠화재 공식 모바일사이트입니다. 고객서비스 및 보험가입안내 제공. 암보험, 치매보험, 펫보험, 건강보험, 치아보험, 태아보험, 어린이보험, 운전자보험, 입원비보험, 수술비보험, 종합보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험 등. 인터넷고객센터를 이용한 계약조회, 보험금 청구, 보험계약 대출, 증명서 발급, 고객정보 변경, 보험료 납입, 전자민원 신청, 서비스망 찾기 등의 서비스를 만나보세요.">
+    <meta name="keywords" content="메리츠화재, 메리츠화재, 운전자보험, 암보험, 태아보험, 어린이보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험, 치매보험, 펫보험, 시니어보험, 간편보험, 입원비보험, 수술비보험, 종합보험, 건강보험, 자동차보험, 다이렉트자동차보험, 다이렉트 해외여행보험, 채팅상담, 보험료계산, 보험가입 상담신청">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../common/images/meritz_favicon.ico">
+    <link rel="apple-touch-icon" href="../../common/images/meritz_favicon.png">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../../default/css/renewal/base.css">
+
+    <!-- script -->
+    <script src="../../common/js/jquery/jquery.min.js"></script>
+    <script src="../../common/js/ui_renewal/swiper-bundle.min.js"></script>
+    <script src="../../common/js/ui_renewal/ui.js"></script>
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="../../common/js/ui_renewal/swiper-bundle.min.css">
+</head>
+<body class="renew">
+    <div class="skipnav"><a href="#Container">본문 바로가기</a></div>
+    <!-- Wrap [s] -->
+    <div id="Wrap">
+        <!-- header [s] -->
+        <header id="Header">
+            <div class="header_wrap">
+                <div class="btns_left">
+                    <button type="button" class="btn_prev"><span>이전</span></button>
+                </div>
+                <h1>기타 안내</h1>
+                <div class="btns_right">
+                    <button type="button" class="btn_menu"><span>메뉴</span></button>
+                </div>
+            </div>
+        </header>
+        <!-- // header [e] -->
+
+        <!-- main container [s] -->
+        <main id="Container">
+            <!-- container [s] -->
+            <section class="contents">
+                <h2 class="m_tit">기타 안내</h2>
+                <button type="button" class="pop_btn_ok" onclick="renewalUI.openPopup('medicalAidGuide');">
+                    <span>openPopup</span>
+                </button>
+            </section>
+            <!-- container [e] -->
+        </main>
+        <!-- // main container [e] -->
+    </div>
+    <!-- // Wrap [e] -->
+
+    <!-- popup area [s] -->
+    <div id="layer_popup_container">
+        <div id="medicalAidGuide">
+            <!-- popup publishing [s] -->
+            <div class="dimmed_area">
+                <!--
+                    popup 형태에 따른 class 값
+                    1. 일반 팝업: 없음
+                    2. alert 팝업: alert
+                    3. confirm 팝업: confirm
+                    4. 전체 팝업: full
+                    5. floating 팝업: floating
+                -->
+                <div class="popup full">
+                    <!-- popup header [s] -->
+                    <div class="pop_header info">
+                        <h1>기타 안내</h1>
+                        <button type="button" class="pop_close"><span class="hidden">닫기</span></button>
+                    </div>
+                    <!-- // popup header [e] -->
+
+                    <!-- popup body [s] -->
+                    <div class="pop_body">
+                        <h2 class="m_tit">청구대행서비스 신청 안내</h2>
+                        <ul class="list_dot">
+                            <li>보험회사에서는 고객님께서 실손의료보험을 2개 이상 다수회사에 가입한 경우, 보험금 청구서류를 회사마다 각각 제출해야 하는 불편함을 덜어드리고자 고객님의 서류를 다른 보험회사로 대신 전송해드리고 있습니다.</li>
+                            <li>동 서비스는 실손의료비 특약만 해당되며, 다른 특약은 해당되지 않습니다.</li>
+                        </ul>
+
+                        <h2 class="m_tit">의료급여 수급권자 안내</h2>
+                        <ul class="list_dot">
+                            <li>당사는 피보험자가 의료급여법상 의료급여 수급권자인 경우, 실손 의료보험 상품에 한하여 보험료 할인제도를 운영하고 있습니다. (2009년 10월 이후 청약상품 및 2014년 4월 이후 갱신계약에 한함)</li>
+                        </ul>
+                    </div>
+                    <!-- // popup body [e] -->
+                </div>
+                <div class="dimmed"></div>
+            </div>
+            <!-- popup publishing [e] -->
+        </div>
+    </div>
+    <!-- popup area [e] -->
+
+    <!-- 퍼블리싱 UI 확인을 위한 script로 개발 시 참고만 해 주세요. -->
+    <script type="text/javascript">
+        $(function () {
+            renewalUI.openPopup('medicalAidGuide');
+        });
+    </script>
+</body>
+</html>

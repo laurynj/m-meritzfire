@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>메리츠화재 공식 사이트</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="메리츠화재">
+    <meta name="description" content="메리츠화재 공식 모바일사이트입니다. 고객서비스 및 보험가입안내 제공. 암보험, 치매보험, 펫보험, 건강보험, 치아보험, 태아보험, 어린이보험, 운전자보험, 입원비보험, 수술비보험, 종합보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험 등. 인터넷고객센터를 이용한 계약조회, 보험금 청구, 보험계약 대출, 증명서 발급, 고객정보 변경, 보험료 납입, 전자민원 신청, 서비스망 찾기 등의 서비스를 만나보세요.">
+    <meta name="keywords" content="메리츠화재, 메리츠화재, 운전자보험, 암보험, 태아보험, 어린이보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험, 치매보험, 펫보험, 시니어보험, 간편보험, 입원비보험, 수술비보험, 종합보험, 건강보험, 자동차보험, 다이렉트자동차보험, 다이렉트 해외여행보험, 채팅상담, 보험료계산, 보험가입 상담신청">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../common/images/meritz_favicon.ico">
+    <link rel="apple-touch-icon" href="../../common/images/meritz_favicon.png">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../../default/css/renewal/base.css">
+
+    <!-- script -->
+    <script src="../../common/js/jquery/jquery.min.js"></script>
+    <script src="../../common/js/ui_renewal/swiper-bundle.min.js"></script>
+    <script src="../../common/js/ui_renewal/ui.js"></script>
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="../../common/js/ui_renewal/swiper-bundle.min.css">
+</head>
+<body class="renew">
+    <div class="skipnav"><a href="#Container">본문 바로가기</a></div>
+    <!-- Wrap [s] -->
+    <div id="Wrap">
+        <!-- header [s] -->
+        <header id="Header">
+            <div class="header_wrap">
+                <div class="btns_left"><button type="button" class="btn_prev"><span>이전</span></button></div>
+                <h1>필요서류 전송</h1>
+                <div class="btns_right"><button type="button" class="btn_menu"><span>메뉴</span></button></div>
+            </div>
+        </header>
+        <!-- // header [e] -->
+
+        <!-- main container [s] -->
+        <main id="Container">
+            <!-- container [s] -->
+            <section class="contents">
+                <h2 class="m_tit">필요서류 전송</h2>
+                <button type="button" class="pop_btn_ok" onclick="renewalUI.openPopup('requiredDocuments');"><span>openPopup</span></button>
+            </section>
+            <!-- container [e] -->
+        </main>
+        <!-- // main container [e] -->
+    </div>
+    <!-- // Wrap [e] -->
+
+    <!-- popup area [s] -->
+    <div id="layer_popup_container">
+        <div id="requiredDocuments">
+            <!-- popup publishing [s] -->
+            <div class="dimmed_area"><!-- popup open시 class값 'on' 추가 -->
+                <!--
+                    popup 형태에 따른 class 값
+                    1. 일반 팝업: 없음
+                    2. alert 팝업: alert
+                    3. confirm 팝업: confirm
+                    4. 전체 팝업: full
+                    5. floating 팝업: floating
+                -->
+                <div class="popup full"><!-- popup open시 class값 'open' 추가 -->
+                    <!-- popup header [s] -->
+                    <div class="pop_header">
+                        <h1>파일첨부</h1>
+                        <button type="button" class="pop_close"><span class="hidden">닫기</span></button>
+                    </div>
+                    <!-- // popup header [e] -->
+
+                    <!-- popup body [s] -->
+                    <div class="pop_body">
+                        <div class="greeting_wrap">
+                            <h2 class="greeting_tit">김메리님,<br>보험금 청구에 <strong>필요한 서류</strong>를<br><strong>전송</strong>해 주세요.</h2>
+                        </div>
+
+                        <div class="guide_box file">
+                            <div class="guide_cont">
+                                <span class="guide_tit">필요서류는 각각 상해, 질병별로 첨부해 주세요</span>
+                                <p class="guide_txt">다음단계에서 <span class="fc_red">사고유형 → 사고일자 →<br>치료/사고내용</span>을 입력해 주세요</p>
+                            </div>
+                        </div>
+
+                        <h3 class="s_tit">유의사항</h3>
+
+                        <div class="accordion last">
+
+                            <div class="acc_item no_toggle">
+                                <ul class="list_dot">
+                                    <li>파일은 서류장당 각각 선명하게 촬영 또는 스캔하여 첨부해 주세요.</li>
+                                    <li>모든 서류는 빠짐없이 첨부해주셔야 원활한 심사가 가능합니다.</li>
+                                    <li>파일당 20MB 이하, 최대 30개까지 첨부할 수 있습니다.</li>
+                                    <li>카드전표(카드영수증)은 보상이 불가합니다.</li>
+                                    <li>보험금 지급심사 중 보완 및 심사 담당자가 추가 서류를 요청드릴 수 있습니다.</li>
+                                    <li>치료받으신분(피보험자)의 서류가 아닐경우 보상처리 되지 않습니다.</li>
+                                    <li>첨부파일은 PDF 및 이미지(JPG, PNG, GIF 등 가능, TIF불가) 파일만 업로드 가능하며, 파일명에 특수문자는 불가합니다.</li>
+                                </ul>
+                            </div>
+
+                            <div class="acc_item">
+                                <div class="acc_header">
+                                    <span class="acc_tit">파일첨부 방법에 대한 설명</span>
+                                    <button type="button" class="acc_btn open"><span class="hidden">닫기</span></button>
+                                </div>
+                                <div class="acc_panel active">
+                                    <ul class="list_dot">
+                                        <li>안드로이드 앱 : <span class="fc_red">첨부할 파일을 길게 누르시면 여러 파일을 동시 선택</span>할 수 있는 기능 활성화</li>
+                                        <li>안드로이드 웹 : ‘파일’ 선택 시 <span class="fc_red">첨부할 파일을 길게 누르시면 여러 파일을 동시 선택</span>할 수 있는 기능 활성화</li>
+                                        <li>iOS앱 : <span class="fc_red">‘앨범’ 선택 시 여러 파일 선택 가능</span>, ‘내파일’ 선택 시 여러 파일 선택 불가<br>(단, iOS14이상 기준)</li>
+                                    </ul>
+                                    <p class="mt10">※ 단, 휴대폰 기종 및 환경에 따라 방법이 상이할 수 있습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // popup body [e] -->
+
+                    <!-- popup footer [s] -->
+                    <div class="pop_bottom">
+                        <div class="inner half">
+                            <button type="button" class="pop_btn_line"><span>서류안내</span></button>
+                            <button type="button" class="pop_btn_ok"><span>파일첨부</span></button>
+                        </div>
+                    </div>
+                    <!-- // popup footer [e] -->
+                </div>
+
+                <div class="dimmed"></div>
+            </div>
+            <!-- popup publishing [e] -->
+        </div>
+    </div>
+    <!-- popup area [e] -->
+
+    <!-- 퍼블리싱 UI 확인을 위한 script로 개발 시 참고만 해 주세요. -->
+    <script type="text/javascript">
+        $(function () {
+            renewalUI.openPopup('requiredDocuments');
+        });
+    </script>
+</body>
+</html>

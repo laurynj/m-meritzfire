@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>메리츠화재 공식 사이트</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="메리츠화재">
+    <meta name="description" content="메리츠화재 공식 모바일사이트입니다. 고객서비스 및 보험가입안내 제공. 암보험, 치매보험, 펫보험, 건강보험, 치아보험, 태아보험, 어린이보험, 운전자보험, 입원비보험, 수술비보험, 종합보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험 등. 인터넷고객센터를 이용한 계약조회, 보험금 청구, 보험계약 대출, 증명서 발급, 고객정보 변경, 보험료 납입, 전자민원 신청, 서비스망 찾기 등의 서비스를 만나보세요.">
+    <meta name="keywords" content="메리츠화재, 메리츠화재, 운전자보험, 암보험, 태아보험, 어린이보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험, 치매보험, 펫보험, 시니어보험, 간편보험, 입원비보험, 수술비보험, 종합보험, 건강보험, 자동차보험, 다이렉트자동차보험, 다이렉트 해외여행보험, 채팅상담, 보험료계산, 보험가입 상담신청">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../common/images/meritz_favicon.ico">
+    <link rel="apple-touch-icon" href="../../common/images/meritz_favicon.png">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../../default/css/renewal/base.css">
+
+    <!-- script -->
+    <script src="../../common/js/jquery/jquery.min.js"></script>
+    <script src="../../common/js/ui_renewal/swiper-bundle.min.js"></script>
+    <script src="../../common/js/ui_renewal/ui.js"></script>
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="../../common/js/ui_renewal/swiper-bundle.min.css">
+</head>
+<body class="renew">
+    <div class="skipnav"><a href="#Container">본문 바로가기</a></div>
+    <!-- Wrap [s] -->
+    <div id="Wrap">
+        <!-- header [s] -->
+        <header id="Header">
+            <div class="header_wrap">
+                <div class="btns_left"><button type="button" class="btn_prev"><span>이전</span></button></div>
+                <h1>제출방식 선택</h1>
+                <div class="btns_right"><button type="button" class="btn_menu"><span>메뉴</span></button></div>
+            </div>
+        </header>
+        <!-- // header [e] -->
+
+        <!-- main container [s] -->
+        <main id="Container">
+            <!-- container [s] -->
+            <section class="contents">
+                <h2 class="m_tit">제출방식 선택</h2>
+                <button type="button" class="pop_btn_ok" onclick="renewalUI.openPopup('submitMethod');"><span>openPopup</span></button>
+            </section>
+            <!-- container [e] -->
+        </main>
+        <!-- // main container [e] -->
+    </div>
+    <!-- // Wrap [e] -->
+
+    <!-- popup area [s] -->
+    <div id="layer_popup_container">
+        <div id="submitMethod">
+            <!-- popup publishing [s] -->
+            <div class="dimmed_area"><!-- popup open시 class값 'on' 추가 -->
+                <!--
+                    popup 형태에 따른 class 값
+                    1. 일반 팝업: 없음
+                    2. alert 팝업: alert
+                    3. confirm 팝업: confirm
+                    4. 전체 팝업: full
+                    5. floating 팝업: floating
+                -->
+                <div class="popup full"><!-- popup open시 class값 'open' 추가 -->
+                    <!-- popup header [s] -->
+                    <div class="pop_header">
+                        <h1></h1>
+                        <button type="button" class="pop_close"><span class="hidden">닫기</span></button>
+                    </div>
+                    <!-- // popup header [e] -->
+
+                    <!-- popup body [s] -->
+                    <div class="pop_body">
+                        
+                        <div class="greeting_wrap">
+                            <h2 class="greeting_tit">신속한 보험금 심사를 위해<br>아래내용 확인 후<br><strong>제출 방식</strong>을 선택해 주세요.</h2>
+                        </div>
+
+                        <div class="guide_box info">
+                            <span class="guide_tit">소득분위 확인(본인부담상한제) 목적으로<br>공공 행정정보 신청 서비스를 활용함</span>
+                            <p class="guide_txt">[필요서류]</p>
+                            <ul class="list_dot">
+                                <li>건강 장기요양납부확인서 (직장가입자)</li>
+                                <li>건강 장기요양납부확인서 (지역가입자)</li>
+                                <li>건강보험자격확인서</li>
+                            </ul>
+                        </div>
+
+                        <div class="icon_btn_group">
+                            <button type="button" class="auto arr">
+                                <div>
+                                    <span class="btn_tit">행정서비스를 활용해 간편신청</span>
+                                    <span>실물서류 첨부 없이 진행에 동의</span>
+                                </div>
+                            </button>
+                            <button type="button" class="camera arr">
+                                <div>
+                                    <span class="btn_tit">서류를 직접 준비해서 제출</span>
+                                    <span>실물서류를 직접 첨부</span>
+                                </div>
+                            </button>
+                        </div>
+
+                        <p class="note_txt">피부양자 대상 서비스는 개발 중으로 현재 가입자 본인만 이용 가능합니다.</p>
+                    </div>
+                    <!-- // popup body [e] -->
+                </div>
+                <div class="dimmed"></div>
+            </div>
+            <!-- popup publishing [e] -->
+        </div>
+    </div>
+    <!-- popup area [e] -->
+
+    <!-- 퍼블리싱 UI 확인을 위한 script로 개발 시 참고만 해 주세요. -->
+    <script type="text/javascript">
+        $(function () {
+            renewalUI.openPopup('submitMethod');
+        });
+    </script>
+</body>
+</html>
