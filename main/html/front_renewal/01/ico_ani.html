@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- ⚠️ 1~43번 줄 미확보: <meta>, <title>, :root 변수 등 상단 스타일이 여기 있었을 것으로 추정됩니다. -->
+
+  <style>
+
+    /* 카드 그리드 */
+    .claim-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    }
+    .claim-card {
+      display: flex; flex-direction: column; gap: 14px;
+      padding: 20px 16px 22px;
+      border: 1px solid var(--line); border-radius: 18px;
+      background: var(--card-bg); box-shadow: var(--shadow);
+      text-align: left; cursor: pointer; font: inherit; color: inherit;
+      -webkit-tap-highlight-color: transparent;
+      opacity: 0;
+      translate: 0 24px;
+      transition:
+        opacity 0.7s ease,
+        translate 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+        scale 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .claim-card.is-in { opacity: 1; translate: 0 0; }
+    .claim-card:active { scale: 1.05; transition-duration: 0s; }
+    .claim-card-text { display: flex; flex-direction: column; gap: 6px; }
+    .claim-card-title { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; }
+    .claim-card-desc { font-size: 12.5px; font-weight: 400; line-height: 1.5; color: var(--text-sub); }
+    .claim-icon { position: relative; width: 60px; height: 60px; }
+    .claim-icon .layer {
+      position: absolute; inset: 0;
+      background: center / contain no-repeat;
+      transform-origin: var(--ox, 50%) var(--oy, 50%);
+      will-change: transform, opacity;
+    }
+
+    /* 아이콘별 배경 이미지 */
+    .claim-icon-kit    .layer { background-image: url("icon/icon-01.png"); --ox: 50%; --oy: 8%; } /* 약가방 – 손잡이(위) 축 */
+    .claim-icon-paw    .layer { background-image: url("icon/icon-02.png"); }
+    .claim-icon-care   .layer { background-image: url("icon/icon-03.png"); }
+    .claim-icon-house  .layer { background-image: url("icon/icon-04.png"); }
+    .claim-icon-gavel  .layer { background-image: url("icon/icon-05.png"); --ox: 62%; --oy: 42%; } /* 판사봉 위치 축 */
+    .claim-icon-shield .layer { background-image: url("icon/icon-06.png"); }
+
+    /* 재생 트리거: JS 가 .claim-card 에 .is-playing 을 잠깐 부여. 파트는 .m-{name} 클래스로 모션 지정 */
+    .claim-card.is-playing .m-push  { animation: m-push  1.9s ease-in-out 1; }
+    .claim-card.is-playing .m-pulse { animation: m-pulse 0.9s ease-in-out 2; }
+    .claim-card.is-playing .m-pop   { animation: m-pop   0.8s cubic-bezier(.34,1.56,.64,1) 1; }
+    .claim-card.is-playing .m-sway  { animation: m-sway  0.7s ease-in-out 2; }
+    .claim-card.is-playing .m-gavel { animation: m-gavel 1.3s linear 1; }
+
+    /* 뒤에서 천천히 밀어주기 – 앞(왼쪽)으로 스르륵 밀려 갔다가 잠깐 멈추고 부드럽게 복귀 */
+    @keyframes m-push {
+      0%   { transform: translateX(0) rotate(0deg); }
+      40%  { transform: translateX(-8px) rotate(-2deg); }
+      65%  { transform: translateX(-8px) rotate(-2deg); }
+      100% { transform: translateX(0) rotate(0deg); }
+    }
+
+    @keyframes m-pulse  { 0%,100% { transform: scale(1); } 45% { transform: scale(1.28); } }
+    @keyframes m-pop {
+      0%   { transform: scale(1); }
+      30%  { transform: scale(1.18); }
+      55%  { transform: scale(0.94); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes m-sway { 0%,100% { transform: rotate(0); } 25% { transform: rotate(9deg); } 75% { transform: rotate(-9deg); } }
+
+    /* 판사봉 – 우측으로 비스듬히 들었다가 탕! ...탕! 두 번 내리침. 키프레임별 타이밍으로 내리칠 때만 빠르게 */
+    @keyframes m-gavel {
+      0%   { transform: rotate(0deg);   animation-timing-function: ease-out; }
+      14%  { transform: rotate(22deg);  animation-timing-function: linear; }
+      26%  { transform: rotate(22deg);  animation-timing-function: cubic-bezier(.6,0,.9,.2); }
+      35%  { transform: rotate(-9deg);  animation-timing-function: ease-out; }
+      41%  { transform: rotate(-1deg);  animation-timing-function: ease-out; }
+      52%  { transform: rotate(19deg);  animation-timing-function: linear; }
+      62%  { transform: rotate(19deg);  animation-timing-function: cubic-bezier(.6,0,.9,.2); }
+      71%  { transform: rotate(-9deg);  animation-timing-function: ease-out; }
+      77%  { transform: rotate(-1deg);  animation-timing-function: ease-out; }
+      88%  { transform: rotate(6deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .claim-card { opacity: 1; translate: none; scale: none; transition: none; }
+      .claim-card.is-playing .anim-part { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <button type="button" class="app-header-btn" aria-label="뒤로 가기">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <!-- ⚠️ svg path 이하 및 헤더 나머지 미확보 -->
+      </svg>
+    </button>
+    <!-- ⚠️ 헤더 나머지 내용 미확보 -->
+  </header>
+
+  <!-- ⚠️ 124~214번 줄 미확보: .claim-grid 안의 실제 카드(.claim-card) 마크업, 아이콘 레이어(.layer) 등이 여기 있었을 것으로 추정됩니다. -->
+
+  <script>
+    // 1) 카드가 한 개씩 차례대로 등장 → 2) 등장 완료 후 랜덤으로 한 카드씩 시그니처 애니메이션 반복
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var cards = Array.prototype.slice.call(document.querySelectorAll(".claim-card"));
+      if (cards.length === 0) return;
+      if (reduce) return; // CSS media query 가 카드를 즉시 표시, 반복 애니메이션은 생략
+
+      var STAGGER = 160;     // 카드 간 등장 간격(ms) – 짧게 겹쳐 은은한 물결
+      var ENTER_DUR = 850;   // 카드 등장 트랜지션(ms, CSS transform 과 동일)
+      var INTERVAL = 850;    // 랜덤 애니메이션 사이 간격(ms) – 짧을수록 자주 움직임
+
+      // — 1) 순차 등장 —
+      cards.forEach(function (card, i) {
+        setTimeout(function () { card.classList.add("is-in"); }, 60 + i * STAGGER);
+      });
+
+      // — 2) 등장이 모두 끝나면 랜덤 루프 시작 —
+      var startDelay = 60 + (cards.length - 1) * STAGGER + ENTER_DUR + 150;
+      setTimeout(startRandomLoop, startDelay);
+
+      function startRandomLoop() {
+        var last = -1;
+        playRandom();
+        setInterval(playRandom, INTERVAL);
+
+        function playRandom() {
+          var i;
+          do {
+            i = Math.floor(Math.random() * cards.length);
+          } while (cards.length > 1 && i === last);
+          last = i;
+
+          var card = cards[i];
+          if (card.classList.contains("is-playing")) return;
+          card.classList.add("is-playing");
+
+          var parts = card.querySelectorAll(".anim-part");
+          var remaining = parts.length;
+          if (!remaining) {
+            setTimeout(function () { card.classList.remove("is-playing"); }, 1400);
+            return;
+          }
+          parts.forEach(function (p) {
+            p.addEventListener("animationend", function done() {
+              p.removeEventListener("animationend", done);
+              if (--remaining <= 0) card.classList.remove("is-playing");
+            });
+          });
+          // 안전장치 – animationend 누락 대비 (가장 긴 모션 m-push 1.9s 기준 여유)
+          setTimeout(function () { card.classList.remove("is-playing"); }, 2400);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

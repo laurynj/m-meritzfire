@@ -99,9 +99,36 @@
     <script type="text/javascript">
         // 카드 순서에 따라 0.12초 간격으로 등장
         $('.claim_type').each(function () {
-            $(this).children('li').filter(':visible').each(function (index) {
+            var $items = $(this).children('li').filter(':visible');
+            var $buttons = $items.children('button');
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            var last = -1;
+
+            $items.each(function (index) {
                 this.style.setProperty('--claim-delay', (index * 0.12) + 's');
             });
+
+            if (!$buttons.length) return;
+
+            // 카드 등장 후 무작위 아이콘 재생
+            function playIcon() {
+                if (document.hidden || reduceMotion.matches) return;
+
+                var $available = $buttons.filter(':visible:not(:disabled):not(.is-playing)').filter(function (index) {
+                    return $buttons.index(this) !== last || $buttons.length === 1;
+                });
+                if (!$available.length) return;
+
+                var $button = $available.eq(Math.floor(Math.random() * $available.length));
+                last = $buttons.index($button);
+                $button.addClass('is-playing');
+                setTimeout(function () { $button.removeClass('is-playing'); }, 2400);
+            }
+
+            setTimeout(function () {
+                playIcon();
+                setInterval(playIcon, 850);
+            }, ($items.length - 1) * 120 + 450 + 150);
         });
     </script>
 </body>

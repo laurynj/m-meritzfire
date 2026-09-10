@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>메리츠화재 공식 사이트</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="메리츠화재">
+    <meta name="description" content="메리츠화재 공식 모바일사이트입니다. 고객서비스 및 보험가입안내 제공. 암보험, 치매보험, 펫보험, 건강보험, 치아보험, 태아보험, 어린이보험, 운전자보험, 입원비보험, 수술비보험, 종합보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험 등. 인터넷고객센터를 이용한 계약조회, 보험금 청구, 보험계약 대출, 증명서 발급, 고객정보 변경, 보험료 납입, 전자민원 신청, 서비스망 찾기 등의 서비스를 만나보세요.">
+    <meta name="keywords" content="메리츠화재, 메리츠화재, 운전자보험, 암보험, 태아보험, 어린이보험, 실비보험, 실손보험, 유병자보험, 주택화재보험, 골절보험, 치매보험, 펫보험, 시니어보험, 간편보험, 입원비보험, 수술비보험, 종합보험, 건강보험, 자동차보험, 다이렉트자동차보험, 다이렉트 해외여행보험, 채팅상담, 보험료계산, 보험가입 상담신청">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../common/images/meritz_favicon.ico">
+    <link rel="apple-touch-icon" href="../../common/images/meritz_favicon.png">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../../default/css/renewal/base.css">
+
+    <!-- script -->
+    <script src="../../common/js/jquery/jquery.min.js"></script>
+    <script src="../../common/js/ui_renewal/swiper-bundle.min.js"></script>
+    <script src="../../common/js/ui_renewal/ui.js"></script>
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="../../common/js/ui_renewal/swiper-bundle.min.css">
+</head>
+<body class="renew">
+    <div class="skipnav"><a href="#Container">본문 바로가기</a></div>
+    <!-- Wrap [s] -->
+    <div id="Wrap">
+        <!-- header [s] -->
+        <header id="Header">
+            <div class="header_wrap">
+                <div class="btns_left"><button type="button" class="btn_prev"><span>이전</span></button></div>
+                <h1>개인(신용)정보 조회에 관한 동의</h1>
+                <div class="btns_right"><button type="button" class="btn_menu"><span>메뉴</span></button></div>
+            </div>
+        </header>
+        <!-- // header [e] -->
+
+        <!-- main container [s] -->
+        <main id="Container">
+            <section class="contents">
+                <h2 class="m_tit">개인(신용)정보 조회에 관한 동의</h2>
+                <button type="button" class="pop_btn_ok" onclick="renewalUI.openPopup('personalInfoInquiry');"><span>openPopup</span></button>
+            </section>
+        </main>
+        <!-- // main container [e] -->
+    </div>
+    <!-- // Wrap [e] -->
+
+    <!-- popup area [s] -->
+    <div id="layer_popup_container">
+        <div id="personalInfoInquiry">
+            <!-- popup publishing [s] -->
+            <div class="dimmed_area"><!-- popup open시 class값 'on' 추가 -->
+                <!--
+                    popup 형태에 따른 class 값
+                    1. 일반 팝업: 없음
+                    2. alert 팝업: alert
+                    3. confirm 팝업: confirm
+                    4. 전체 팝업: full
+                    5. floating 팝업: floating
+                -->
+                <div class="popup full"><!-- popup open시 class값 'open' 추가 -->
+                    <!-- popup header [s] -->
+                    <div class="pop_header info">
+                        <h1>개인(신용)정보 조회에 관한 동의</h1>
+                        <button type="button" class="pop_close"><span class="hidden">닫기</span></button>
+                    </div>
+                    <!-- // popup header [e] -->
+
+                    <!-- popup body [s] -->
+                    <div class="pop_body">
+                        <div class="terms_area">
+                            <p class="fc_black">귀하는 개인(신용)정보의 수집·이용 및 조회, 제공에 관한 동의를 거부하실 수 있으며, 개인의 신용도 등을 평가하기 위한 목적 이외의 개인(신용)정보 제공 동의는 철회할 수 있습니다. 다만, 본 동의는 ‘보험금 청구’를 위해 필수적인 사항이므로 동의를 거부하시는 경우 관련 업무수행이 불가능할 수 있습니다.</p>
+                        </div>
+                        <div class="terms_area claim_terms">
+                            <h2 class="ss_tit">개인(신용)정보의 조회에 관한 사항</h2>
+                            <div class="tbl_style3">
+                                <table>
+                                    <caption>개인(신용)정보 조회 대상 기관, 조회 목적, 조회 동의의 효력기간, 조회 항목</caption>
+                                    <colgroup><col style="width:106px;"><col></colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">조회 대상 기관</th>
+                                            <td>
+                                                <p>
+                                                    종합신용정보집중기관, 생명·손해보험협회, 금융거래기관, 실명/본인인증 기관(신용정보회사 및 통신사),전자차트사(펫보험) 등
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">조회 목적</th>
+                                            <td>
+                                                <ul class="list_num">
+                                                    <li>종합신용정보집중기관: 보험사고·보험사기 조사 및 보험금지급·심사, 교통사고처리내역 발급 간소화 서비스</li>
+                                                    <li>생명·손해보험협회, 종합신용정보집중기관: 보험금 청구서류 접수대행 서비스</li>
+                                                    <li>금융거래기관 : 보험금 지급계좌 예금주 확인</li>
+                                                    <li>실명/본인인증기관 : 홈페이지,모바일 실명인증 및 본인인증</li>
+                                                    <li>전자차트사 : 반려동물 진료기록 확인(펫보험)</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">조회 동의의 효력기간</th>
+                                            <td>
+                                                <p><strong class="fc_black">보험거래종료 후 5년까지 동의의 효력이 지속됩니다.</strong></p>
+                                                <p>
+                                                    (단, 거래종료 후 5년이 경과한 후에는 보험금지급, 금융 사고조사, 보험사기 방지, 적발, 민원처리, 법령상 의무이행을 위한 경우에 한하여 보유·이용하며, 별도 보관)
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">조회 항목</th>
+                                            <td>
+                                                <ul class="list_num">
+                                                    <li>고유식별정보 : 주민등록번호, 외국인등록번호, 여권번호, 운전면허번호</li>
+                                                    <li>민감정보 : 질병·상해에 관한 정보(진료기록, 상병명, 기왕증 등), 교통법규 위반정보, 교통사고  조사기록(당사의 요청에 따라 보험요율산출기관이 경찰청으로부터 제공받은 정보)</li>
+                                                    <li>
+                                                        개인(신용)정보<br>
+                                                        1) 일반개인정보 : 성명, 국내거소신고번호, 면허의 효력에 관한 정보,반려동물 진료기록(펫보험)<br>
+                                                        2) 신용거래정보 : 보험계약정보(증권번호, 상품종류, 기간, 보험가입금액 등), 보험금정보(보험금 지급사유, 지급금액 등 보험금 지급 및 사고정보는 과거 및 현재의 당사 보험 처리 내용을 포함 함)
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // popup body [e] -->
+                </div>
+                <div class="dimmed"></div>
+            </div>
+            <!-- popup publishing [e] -->
+        </div>
+    </div>
+    <!-- popup area [e] -->
+
+    <!-- 퍼블리싱 UI 확인을 위한 script로 개발 시 참고만 해 주세요. -->
+    <script type="text/javascript">
+        $(function () {
+            renewalUI.openPopup('personalInfoInquiry');
+        });
+    </script>
+</body>
+</html>

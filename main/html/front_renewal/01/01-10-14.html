@@ -102,8 +102,17 @@
             // 기타 선택 시 입력영역과 버튼 노출
             $('.choice_list > li > button').on('click', function () {
                 var isEtc = $(this).parent().is($etc);
+                $('html, body').stop();
                 $input.add($bottom).toggleClass('hide', !isEtc);
                 if (!isEtc) counter($text.val('')[0]);
+
+                // 기타 입력란이 하단 버튼에 가려진 만큼만 스크롤
+                if (isEtc) {
+                    var hiddenHeight = $input[0].getBoundingClientRect().bottom - $bottom.find('.floating_inner')[0].getBoundingClientRect().top + 16;
+                    if (hiddenHeight > 0) {
+                        $('html, body').animate({scrollTop: $(window).scrollTop() + hiddenHeight}, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 250);
+                    }
+                }
             });
         });
 

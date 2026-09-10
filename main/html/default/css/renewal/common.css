@@ -1552,6 +1552,3 @@ body.block-ui>.block-ui-container{position:fixed}
 .renew .fw_500{font-weight: 500;}
 .renew .m_tit1{font-size: 15px; margin:24px 0 16px 0; display: block;}
 .renew .m_tit1:first-child{margin-top:0}
-
-/* 주민등록번호 비활성 배경 */
-.renew .form_item.jumin.disabled .inp_box > input[type="password"]{background:transparent;}

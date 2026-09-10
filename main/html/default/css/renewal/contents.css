@@ -1872,6 +1872,47 @@ html.noscroll {overflow:hidden;top:0;}
 /********************************************************
 	보상/보험금청구 20260910
 ********************************************************/
+/* 공통 버튼 누름 효과 */
+.renew .claim_type button,
+.renew .claim_method .method_btn,
+.renew .claim_quick button,
+.renew .claim_toast .view,
+.renew .choice_list > li > button,
+.renew .icon_btn_group button,
+.renew .link_list_box.claim_links button,
+.renew .guide_box.hospital,
+.renew .status_list button {transition:transform .1s ease;}
+.renew .claim_type button:not(:disabled):active,
+.renew .claim_method .method_btn:not(:disabled):active,
+.renew .claim_quick button:not(:disabled):active {transform:scale(.97);}
+.renew .icon_btn_group button:not(:disabled):active,
+.renew .guide_box.hospital:not(:disabled):active,
+.renew .link_list_box.claim_links button:not(:disabled):active,
+.renew .status_list button:not(:disabled):active {transform:scale(.98);}
+.renew .claim_method .compact .method_btn:not(:disabled):active,
+.renew .claim_toast .view:not(:disabled):active {transform:scale(.95);}
+@media (prefers-reduced-motion:reduce) {
+    .renew .claim_type button,
+    .renew .claim_method .method_btn,
+    .renew .claim_quick button,
+    .renew .claim_toast .view,
+    .renew .choice_list > li > button,
+	.renew .icon_btn_group button,
+	.renew .link_list_box.claim_links button,
+	.renew .guide_box.hospital,
+    .renew .status_list button {transition:none;}
+    .renew .claim_type button:not(:disabled):active,
+    .renew .claim_method .method_btn:not(:disabled):active,
+    .renew .claim_method .compact .method_btn:not(:disabled):active,
+    .renew .claim_quick button:not(:disabled):active,
+    .renew .claim_toast .view:not(:disabled):active,
+    .renew .choice_list > li > button:not(:disabled):active,
+	.renew .icon_btn_group button:not(:disabled):active,
+	.renew .link_list_box.claim_links button:not(:disabled):active,
+	.renew .guide_box.hospital:not(:disabled):active,
+    .renew .status_list button:not(:disabled):active {transform:none;}
+}
+
 /************************* 공통 ************************/
 .renew .gap24 {gap:24px !important;}
 
@@ -1879,17 +1920,16 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .form_item.date_time.vertical {display:block;}
 .renew .form_item.textbox .counter.light{color:#ccc;}
 .renew .form_label.large {font-size:15px;line-height:19px;}
-/* .renew .ui-datepicker {transform: translateY(4px);}
-.renew .ui-datepicker.is-above {transform: translateY(-4px);} */
 
-/* 밑줄형 선택버튼 */
+/* 밑줄형 선택목록 */
 .renew .choice_list > li {border-bottom:1px solid #e6ecf1;}
 .renew .choice_list.no_last > li:last-child {border-bottom:0;}
 .renew .choice_list > li > button {display:flex;flex-direction:column;align-items:flex-start;width:100%;padding:16px 8px;text-align:left;}
+
 .renew .choice_list span {min-height:22px;margin-top:4px;font-size:14px;line-height:18px;color:#666;}
 .renew .choice_list .tit {margin-top:0;color:#222;font-size:16px;font-weight:700;line-height:20px;}
 .renew .choice_list .tit + span {font-weight:400;}
-/* 한줄 선택 */
+/* 한줄형 선택목록 */
 .renew .choice_list.line > li > button {padding:24px 8px;}
 .renew .choice_list.line .textbox {margin:0 8px 24px;}
 .renew .choice_list.line .textbox .inp_box {margin-top:-10px;}
@@ -1918,7 +1958,7 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .addfile_list.view .del_btn {width:32px;padding:0;}
 .renew .addfile_list.view .del_btn::after {top:50%;right:50%;width:16px;height:16px;background-image:var(--ico-delect2);transform:translate(50%,-50%);}
 
-/* 아이콘형 안내 박스 */
+/* 안내 박스(아이콘형) */
 .renew .guide_box {display:flex;padding:16px;border:1px solid #e6ecf1;border-radius:8px;background:#f5f8fa;}
 .renew .guide_box .guide_cont {display:flex;flex:1;flex-direction:column;min-width:0;}
 .renew .guide_box .guide_tit {font-size:13px;font-weight:700;line-height:17px;}
@@ -1963,14 +2003,13 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .pop_guide_card .list_dot > li .tit {display: flex; font-size: 13px; font-weight: 500; line-height: 17px; color:#222; margin-bottom: 4px;}
 .renew .pop_guide_card .guide_info {display:flex;align-items:flex-start;gap:4px;margin:8px 0 0 6px;color:#666;font-size:14px;line-height:18px;}
 .renew .pop_guide_card .guide_tag {flex:none;padding:2px 8px;border-radius:4px;background:#e6ecf1;color:#222;font-size:12px;font-weight:500;line-height:14px;}
-.renew .pop_guide_wrap .s_tit {margin-top: 36px;}
 .renew .pop_guide_card.pet .list_dot li span {display: flex; margin-top: 8px;}
 .renew .pop_guide_card .guide_cont > .list_dot {margin-top:16px;}
 .renew .pop_guide_card .guide_cont > .list_dot > li {padding-left:6px;}
 .renew .pop_guide_card .guide_cont > .list_dot > li::before {top:7px;}
 .renew .pop_guide_card .guide_info > p {flex:1;min-width:0;color:inherit;}
 
-/* 아이콘형 버튼 */
+/* 버튼 박스(아이콘형) */
 .renew .icon_btn_group {display: flex; flex-direction: column; gap: 16px; margin-top:32px;}
 .renew .icon_btn_group button {position:relative;display:flex;align-items:center;width:100%;min-height:88px;padding:20px 44px 20px 76px;border:1px solid #dce4ea;border-radius:8px;text-align:left;}
 .renew .icon_btn_group button::before {content:'';position:absolute;left:16px;top:50%;width:44px;height:44px;border-radius:50%;background-color:#f5f8fa;background-position:center;background-repeat:no-repeat;background-size:32px;transform:translateY(-50%);}
@@ -1984,6 +2023,34 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .icon_btn_group + .note_txt::before {content:'※';position:absolute;left:0;top:0;}
 
 /************************* 페이지 ************************/
+/* 개인(신용)정보 수집·이용 약관 */
+.renew .claim_terms > .ss_tit {padding-left:0;font-size:16px;font-weight: 700;line-height:20px;}
+.renew .claim_terms .tbl_style3 {border-top-color:#ddd;}
+.renew .claim_terms .tbl_style3 table {table-layout:fixed;}
+.renew .claim_terms .tbl_style3 th {background:#fff;font-weight:400;vertical-align:top;color:#222;}
+.renew .claim_terms .tbl_style3 td {color:#666;line-height:18px;overflow-wrap:break-word;}
+.renew .claim_terms ul[class*="list_"] > li {margin-top:8px;}
+.renew .claim_terms ul[class*="list_"] > li:first-child {margin-top:0;}
+.renew .claim_terms p + .list_num3,
+.renew .claim_terms ul p {margin-top:8px;}
+/* 필수약관 동의 */
+.renew .popup.floating .check_list.claim_agree {margin:0;}
+.renew .claim_agree > li + li {margin-top:24px;}
+.renew .claim_agree .check_item {min-height:24px;margin:0;padding:0;}
+.renew .claim_agree .check_item input[type="checkbox"] {left:0;}
+.renew .claim_agree .check_item label {height:auto;min-height:24px;line-height:20px;}
+.renew .claim_agree > li > .check_item {padding-right:28px;}
+.renew .claim_agree > li > .check_item label {font-weight:700;}
+.renew .claim_agree > li > .check_item label::before,
+.renew .claim_agree > li > .check_item input[type="checkbox"] {top:-2px;}
+.renew .claim_agree button.more {right:-6px;}
+.renew .claim_agree button.more.align_first {top:-6px;}
+.renew .claim_agree button.more_dark::before {top:calc(50% - 10px);left:calc(50% - 10px);width:20px;height:20px;background-image:var(--ico-more-dark);}
+.renew .claim_agree_sub {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 8px;margin-top:12px;padding-left:24px;}
+.renew .claim_agree_sub .check_item {display:flex;align-items:center;}
+.renew .claim_agree_sub .check_item label,
+.renew .claim_agree_sub .check_item input[type="checkbox"]:checked + label {font-weight:400;}
+
 /* 페이지 타이틀 영역 */
 .renew .greeting_wrap > .step {position:absolute;top:0;right:0;font-size:15px;line-height:24px;}
 .renew .greeting_wrap > .guide {position:absolute;top:34px;right:0;height:28px;padding:0 12px;border-radius:50px;background:#f6f6f6;}
@@ -1994,6 +2061,7 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .claim_type {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px;}
 .renew .claim_type > li {opacity:0;transform:translateY(8px);animation:claimTypeIn .45s ease forwards;animation-delay:var(--claim-delay, 0s);}
 .renew .claim_type button {display:flex;flex-direction:column;justify-content:flex-start;width:100%;height:156px;padding:16px 12px;border:1px solid #dce4ea;border-radius:16px;text-align:left;}
+
 .renew .claim_type button::before {content:'';flex:none;width:50px;height:50px;margin-bottom:12px;background-position:center;background-repeat:no-repeat;background-size:50px;}
 .renew .claim_type span {display:block;}
 .renew .claim_type .tit {font-size:16px;font-weight:700;line-height:20px;}
@@ -2001,14 +2069,58 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .claim_type .health::before {background-image:var(--ico-claim-health);}
 .renew .claim_type .pet::before {background-image:var(--ico-claim-pet);}
 .renew .claim_type .care::before {background-image:var(--ico-claim-care);}
-.renew .claim_type .liability::before {background-image:var(--ico-claim-liability);}
-.renew .claim_type .property::before {background-image:var(--ico-claim-property);}
+.renew .claim_type .liability::before {background-image:var(--ico-claim-property);}
+.renew .claim_type .property::before {background-image:var(--ico-claim-liability);}
 .renew .claim_type .group::before {background-image:var(--ico-claim-group);}
+/* 청구항목 아이콘 애니메이션 */
+.renew .claim_type .health::before {transform-origin:50% 8%;}
+.renew .claim_type .property::before {transform-origin:62% 42%;}
+.renew .claim_type .health.is-playing::before {animation:claimIconSway .7s ease-in-out 2;}
+.renew .claim_type .pet.is-playing::before {animation:claimIconPulse .9s ease-in-out 2;}
+.renew .claim_type .care.is-playing::before {animation:claimIconPush 1.9s ease-in-out;}
+.renew .claim_type .liability.is-playing::before {animation:claimIconSway .7s ease-in-out 2;}
+.renew .claim_type .group.is-playing::before {animation:claimIconPop .8s cubic-bezier(.34,1.56,.64,1);}
+.renew .claim_type .property.is-playing::before {animation:claimIconGavel 1.3s linear;}
+@keyframes claimIconPush {
+    0%,100% {transform:translateX(0) rotate(0);}
+    40%,65% {transform:translateX(-8px) rotate(-2deg);}
+}
+@keyframes claimIconPulse {
+    0%,100% {transform:scale(1);}
+    45% {transform:scale(1.28);}
+}
+@keyframes claimIconPop {
+    0%,100% {transform:scale(1);}
+    30% {transform:scale(1.18);}
+    55% {transform:scale(.94);}
+}
+@keyframes claimIconSway {
+    0%,100% {transform:rotate(0);}
+    25% {transform:rotate(9deg);}
+    75% {transform:rotate(-9deg);}
+}
+@keyframes claimIconGavel {
+    0% {transform:rotate(0);animation-timing-function:ease-out;}
+    14% {transform:rotate(22deg);animation-timing-function:linear;}
+    26% {transform:rotate(22deg);animation-timing-function:cubic-bezier(.6,0,.9,.2);}
+    35% {transform:rotate(-9deg);animation-timing-function:ease-out;}
+    41% {transform:rotate(-1deg);animation-timing-function:ease-out;}
+    52% {transform:rotate(19deg);animation-timing-function:linear;}
+    62% {transform:rotate(19deg);animation-timing-function:cubic-bezier(.6,0,.9,.2);}
+    71% {transform:rotate(-9deg);animation-timing-function:ease-out;}
+    77% {transform:rotate(-1deg);animation-timing-function:ease-out;}
+    88% {transform:rotate(6deg);}
+    100% {transform:rotate(0);}
+}
+@media (prefers-reduced-motion:reduce) {
+    .renew .claim_type button.is-playing::before {animation:none;}
+}
 @keyframes claimTypeIn {
     to {opacity:1;transform:translateY(0);}
 }
 @media (prefers-reduced-motion:reduce) {
     .renew .claim_type > li {opacity:1;transform:none;animation:none;}
+
 }
 
 /* 입력정보 확인 */
@@ -2051,18 +2163,19 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .claim_method .method_btn {grid-column:1 / -1;width:100%;height:34px;margin-top:16px;border-radius:17px;background:#0055b9;color:#fff;font-size:14px;font-weight:700;line-height:18px;}
 .renew .claim_method .method_btn span {color:#fff;}
 .renew .claim_method.select {margin-top:8px;}
+
 .renew .claim_method.select > li > div {min-height:64px;}
 .renew .claim_method.select .tit {font-size:16px;line-height:20px;}
 .renew .claim_method .meritz::before {background-image:var(--ico-claim-meritz);}
 .renew .claim_method .meritz .method_btn {background:#ef3b24;}
 .contents:has(.claim_method) .sss_tit {color:#333;margin-bottom:8px;}
-
 .renew .guide_box.claim.damage {min-height:78px;margin-top:0;padding:16px 16px 16px 68px; border:none; background-color: #FCF6F4;}
 .renew .guide_box.claim.damage .guide_txt {font-size: 15px; line-height: 19px;}
 /* 바로가기 */
 .renew .claim_quick {position:relative;display:flex;justify-content:space-around;margin-top:32px;}
 .renew .claim_quick::before {content:'';position:absolute;top:0;left:50%;width:1px;height:128px;background:#e6ecf1;}
 .renew .claim_quick button {display:flex;flex-direction:column;align-items:center; justify-content: center; gap:16px;width:140px;}
+
 .renew .claim_quick button::before {content:'';width:60px;height:60px;border-radius:50%;background-color:#F3F6F8;background-position:center;background-repeat:no-repeat;background-size:50px;}
 .renew .claim_quick .docs::before {background-image:var(--ico-claim-docs);}
 .renew .claim_quick .reqdocs::before {background-image:var(--ico-claim-reqdocs);}
@@ -2072,7 +2185,7 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .claim_quick .txt_group .tit {font-size:16px;font-weight:700;color:#222;line-height:20px;}
 .renew .claim_quick + .claim_links {margin-top:40px;}
 .renew .link_list_box.arr.claim_links .btn_senior_link02 {border-color:#dce4ea;}
-.renew .link_list_box.arr.claim_links .btn_senior_link02 > span {color:#666;font-size:14px;font-weight:400;line-height:18px;}
+.renew .link_list_box.arr.claim_links .btn_senior_link02 > span {display:inline-block;color:#666;font-size:14px;font-weight:400;line-height:18px;}
 
 /****** 청구현황 확인 ******/
 .renew #Container > section.claim_status {position:relative;padding-top: 16px;}
@@ -2089,9 +2202,10 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .status_filter_layer .btn_ok {margin-top:32px;}
 .renew .status_result {margin-top:24px;}
 .renew .result_count {padding:0 8px 10px;border-bottom:2px solid #222;font-size:14px;font-weight:700;line-height:18px;}
-.renew .result_count em,.renew .status_list strong em {color:#ef3b24;}
+.renew .result_count em {color:#ef3b24;}
 .renew .status_list li {border-bottom:1px solid #ddd;opacity:0;transform:translateY(8px);animation:statusListIn .35s ease forwards;}
 .renew .status_list button {display:flex;flex-direction:column;gap:10px;width:100%;padding:16px 8px;text-align:left;}
+
 .renew .status_list .status_meta,.renew .status_list .status_info {display:flex;align-items:center;justify-content:space-between;width:100%;color:#666;}
 .renew .status_list .status_meta {font-size:13px;line-height:17px;}
 .renew .status_list strong {font-size:16px;line-height:20px;}
@@ -2103,6 +2217,7 @@ html.noscroll {overflow:hidden;top:0;}
 @media (prefers-reduced-motion:reduce) {
     .renew .status_list li,
     .renew .claim_status .empty_data {opacity:1;transform:none;animation:none;}
+
 }
 
 /****** 청구 상세내역 ******/
