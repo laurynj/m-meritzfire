@@ -2256,8 +2256,8 @@ $(function () {
 			height = Math.min(height, list.scrollHeight);
 			if (height === previousHeight) return;
 			previousHeight = height;
-			// 선 길이에 비례한 시간 (0.4~1.0초)
-			var duration = Math.max(0.4, Math.min(1.0, height / 200));
+			// 선 길이에 비례한 시간 (0.5~1.2초)
+			var duration = Math.max(0.5, Math.min(1.2, height / 200));
 			$list.css({
 				'--progress-duration': duration + 's',
 				'--progress-height': height + 'px'
