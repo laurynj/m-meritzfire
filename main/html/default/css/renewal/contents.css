@@ -1872,49 +1872,29 @@ html.noscroll {overflow:hidden;top:0;}
 /********************************************************
 	보상/보험금청구 20260910
 ********************************************************/
-/* 공통 버튼 누름 효과 */
-.renew .claim_type button,
-.renew .claim_method .method_btn,
-.renew .claim_quick button,
-.renew .claim_toast .view,
-.renew .choice_list > li > button,
-.renew .icon_btn_group button,
-.renew .link_list_box.claim_links button,
-.renew .guide_box.hospital,
-.renew .status_list button {transition:transform .1s ease;}
-.renew .claim_type button:not(:disabled):active,
-.renew .claim_method .method_btn:not(:disabled):active,
-.renew .claim_quick button:not(:disabled):active {transform:scale(.97);}
-.renew .icon_btn_group button:not(:disabled):active,
-.renew .guide_box.hospital:not(:disabled):active,
-.renew .link_list_box.claim_links button:not(:disabled):active,
-.renew .status_list button:not(:disabled):active {transform:scale(.98);}
-.renew .claim_method .compact .method_btn:not(:disabled):active,
-.renew .claim_toast .view:not(:disabled):active {transform:scale(.95);}
-@media (prefers-reduced-motion:reduce) {
-    .renew .claim_type button,
-    .renew .claim_method .method_btn,
-    .renew .claim_quick button,
-    .renew .claim_toast .view,
-    .renew .choice_list > li > button,
-	.renew .icon_btn_group button,
-	.renew .link_list_box.claim_links button,
-	.renew .guide_box.hospital,
-    .renew .status_list button {transition:none;}
-    .renew .claim_type button:not(:disabled):active,
-    .renew .claim_method .method_btn:not(:disabled):active,
-    .renew .claim_method .compact .method_btn:not(:disabled):active,
-    .renew .claim_quick button:not(:disabled):active,
-    .renew .claim_toast .view:not(:disabled):active,
-    .renew .choice_list > li > button:not(:disabled):active,
-	.renew .icon_btn_group button:not(:disabled):active,
-	.renew .link_list_box.claim_links button:not(:disabled):active,
-	.renew .guide_box.hospital:not(:disabled):active,
-    .renew .status_list button:not(:disabled):active {transform:none;}
-}
 
 /************************* 공통 ************************/
 .renew .gap24 {gap:24px !important;}
+
+/* 공통 버튼 누름 효과 */
+.renew :is(.claim_type button, .claim_method .method_btn, .claim_quick button) {--press-scale:.97;}
+.renew :is(.choice_list > li > button, .icon_btn_group button, .link_list_box.claim_links button, .guide_box.hospital, .status_list button) {--press-scale:.98;}
+.renew :is(.claim_method .compact .method_btn, .greeting_wrap > .guide, .addfile_list.view .del_btn, .claim_toast .view) {--press-scale:.95;}
+.renew :is(
+    .claim_type button, .claim_method .method_btn, .claim_quick button,
+    .choice_list > li > button, .icon_btn_group button, .link_list_box.claim_links button,
+    .guide_box.hospital, .status_list button, .greeting_wrap > .guide,
+    .addfile_list.view .del_btn, .claim_toast .view
+) {transition:transform var(--press-duration,.1s) ease;}
+.renew :is(
+    .claim_type button, .claim_method .method_btn, .claim_quick button,
+    .choice_list > li > button, .icon_btn_group button, .link_list_box.claim_links button,
+    .guide_box.hospital, .status_list button, .greeting_wrap > .guide,
+    .addfile_list.view .del_btn, .claim_toast .view
+):not(:disabled):is(:active,.is_pressed) {transform:var(--press-transform,scale(var(--press-scale)));}
+@media (prefers-reduced-motion:reduce) {
+    .renew {--press-duration:0s; --press-transform:none;}
+}
 
 /* form */
 .renew .form_item.date_time.vertical {display:block;}
@@ -2120,7 +2100,6 @@ html.noscroll {overflow:hidden;top:0;}
 }
 @media (prefers-reduced-motion:reduce) {
     .renew .claim_type > li {opacity:1;transform:none;animation:none;}
-
 }
 
 /* 입력정보 확인 */
@@ -2217,7 +2196,6 @@ html.noscroll {overflow:hidden;top:0;}
 @media (prefers-reduced-motion:reduce) {
     .renew .status_list li,
     .renew .claim_status .empty_data {opacity:1;transform:none;animation:none;}
-
 }
 
 /****** 청구 상세내역 ******/
@@ -2230,4 +2208,8 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .guide_box.claim.rejected::before {background-image:var(--ico-claim-rejected);}
 .renew .guide_box.claim .guide_tit {font-size:15px;line-height:19px;}
 .renew .guide_box.claim .guide_txt {font-size:13px;line-height:17px; font-weight: 700; color: #222; margin-top: 0;}
-.renew .item_process ul.list_num.type2 >li .desc {color:#666; padding-top: 4px;}
+.renew .item_process ul.list_num.motion > li::before {width:16px;text-align:left;}
+.renew .item_process ul.list_num.motion > li .desc {color:#666; padding-top: 4px;}
+.renew .item_process ul.list_num.motion > li.done::after {content:none;}
+.renew .item_process ul.list_num.motion::before {top:0;}
+.renew .item_process ul.list_num.motion::after {content:'';width:2px;background:#ef3b24;border-radius:1px;position:absolute;left:0;top:0;height:var(--progress-height,0);transition:height var(--progress-duration,.5s) ease;}

@@ -142,7 +142,7 @@
                 </div>
                 <!-- // 상세조회 필터 -->
 
-                <!-- 검색결과 비노출 .hide 추가 -->
+                <!-- 검색결과 -->
                 <div class="status_result">
                     <p class="result_count">총 <em>17</em>건</p>
                     <ul class="status_list">
@@ -190,19 +190,16 @@
                             </button>
                         </li>
                     </ul>
-                </div>
-                <!-- // 검색결과 -->
 
-                <!-- 검색결과 0건 노출 .hide 삭제 -->
-                <div class="status_result hide">
-                    <p class="result_count">총 <em>0</em>건</p>
-                    <div class="empty_data">
+                    <!-- 검색결과 0건: 건수 0, 목록 숨김, 아래 .hide 삭제 -->
+                    <div class="empty_data hide">
                         <p class="empty_txt warning">
                             <strong>검색결과</strong>가 없습니다.
                         </p>
                     </div>
                 </div>
-                <!-- // 검색결과 0건 -->
+                <!-- // 검색결과 -->
+
             </section>
             <!-- container [e] -->
         </main>
@@ -224,12 +221,13 @@
             // result: 검색결과 2건 노출
             if (type === 'result') {
                 $statusList.children('li').not(':has(.chip.ongoing, .chip.terminate)').remove();
-                $statusResult.eq(0).find('.result_count em').text($statusList.children('li').length);
+                $statusResult.find('.result_count em').text($statusList.children('li').length);
             }
             // noresult: 검색결과 0건 노출
             if (type === 'noresult') {
-                $statusResult.eq(0).addClass('hide');
-                $statusResult.eq(1).removeClass('hide');
+                $statusResult.find('.result_count em').text('0');
+                $statusList.addClass('hide');
+                $statusResult.find('.empty_data').removeClass('hide');
             }
 
             // 검색결과 순차 노출

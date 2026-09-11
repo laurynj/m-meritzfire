@@ -2210,10 +2210,74 @@ var seniorUI = {
 	}
 }
 
-/* 보험금청구 단계 표시 */
+/* 20260910 보상/보험금청구 */
 $(function () {
+	// 터치 버튼 누름 효과
+	var $pressed = $();
+	function clearPress() {
+		$pressed.removeClass('is_pressed');
+		$pressed = $();
+	}
+	$('.renew').on('pointerdown.claimPress', 'button, a, [role="button"]', function(e) {
+		var pointer = e.originalEvent;
+		if ($(this).is(':disabled') || pointer.isPrimary === false || pointer.button !== 0) return;
+		// CSS에 비율이 지정된 버튼만 적용
+		if (!window.getComputedStyle(this).getPropertyValue('--press-scale').trim()) return;
+		clearPress();
+		$pressed = $(this).addClass('is_pressed');
+	});
+	$(document).on('pointerup.claimPress pointercancel.claimPress', clearPress)
+		.on('pointerout.claimPress', function(e) {
+			var button = $pressed[0];
+			if (button && (!e.relatedTarget || (e.relatedTarget !== button && !$.contains(button, e.relatedTarget)))) clearPress();
+		});
+	$(window).on('blur.claimPress pagehide.claimPress', clearPress);
+
+	// 보험금청구 단계 표시
 	$('.step[data-step]').each(function () {
 		var $this = $(this), step = $this.data('step'), total = 12;
 		$this.text(('0' + step).slice(-2) + '/' + total).attr('aria-label', '전체 ' + total + '단계 중 ' + step + '단계');
+	});
+
+	// 청구상세내역 진행현황 표시
+	$('.item_process .list_num.motion').each(function() {
+		var $list = $(this);
+		var list = this;
+		var previousHeight;
+		var started = false;
+
+		function updateProgress() {
+			if (!started || !list.getClientRects().length) return;
+
+			var $last = $list.children('li.on').last();
+			if (!$last.length) $last = $list.children('li.done').last();
+			// 설명과 줄바꿈을 포함한 단계 높이
+			var height = $last.length ? $last.position().top + $last.outerHeight() : 0;
+			height = Math.min(height, list.scrollHeight);
+			if (height === previousHeight) return;
+			previousHeight = height;
+			// 선 길이에 비례한 시간 (0.4~1.0초)
+			var duration = Math.max(0.4, Math.min(1.0, height / 200));
+			$list.css({
+				'--progress-duration': duration + 's',
+				'--progress-height': height + 'px'
+			});
+		}
+
+		setTimeout(function() {
+			// 초기 대기 전 이벤트 실행 방지
+			started = true;
+			updateProgress();
+			if (window.ResizeObserver) {
+				var resizeObserver = new ResizeObserver(updateProgress);
+				resizeObserver.observe(list);
+				$list.children('li').each(function() { resizeObserver.observe(this); });
+			}
+		}, 100);
+		$(window).on('load resize', updateProgress);
+		if (window.MutationObserver) {
+			var mutationObserver = new MutationObserver(updateProgress);
+			mutationObserver.observe(list, {subtree:true, childList:true, characterData:true, attributes:true, attributeFilter:['class']});
+		}
 	});
 });
