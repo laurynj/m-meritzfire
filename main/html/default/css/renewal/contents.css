@@ -1897,6 +1897,7 @@ html.noscroll {overflow:hidden;top:0;}
 }
 
 /* form */
+.renew .form_item.ico_cal .ui-datepicker-trigger { background:var(--ico-calendar2) center/32px 32px no-repeat; overflow:hidden; text-indent:-9999px; }
 .renew .form_item.date_time.vertical {display:block;}
 .renew .form_item.textbox .counter.light{color:#ccc;}
 .renew .form_label.large {font-size:15px;line-height:19px;}
@@ -1995,6 +1996,12 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .icon_btn_group button::before {content:'';position:absolute;left:16px;top:50%;width:44px;height:44px;border-radius:50%;background-color:#f5f8fa;background-position:center;background-repeat:no-repeat;background-size:32px;transform:translateY(-50%);}
 .renew .icon_btn_group .auto::before {background-image:var(--ico-doc-auto);}
 .renew .icon_btn_group .camera::before {background-image:var(--ico-doc-camera);}
+
+@media (prefers-reduced-motion: reduce) {
+    .renew .icon_btn_group.icon_motion .auto .motion_icon,
+    .renew .icon_btn_group.icon_motion .camera .motion_icon::before,
+    .renew .icon_btn_group.icon_motion .camera .motion_icon::after {animation:none;}
+}
 .renew .icon_btn_group .arr::after {content:'';position:absolute;right:14px;top:50%;width:20px;height:20px;background:var(--ico-selbox) center/100% no-repeat;transform:translateY(-50%) rotate(-90deg);}
 .renew .icon_btn_group div {display:flex;flex-direction:column;gap:8px;}
 .renew .icon_btn_group div .btn_tit {font-size:16px;font-weight:700;line-height:20px;}
@@ -2041,7 +2048,6 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .claim_type {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px;}
 .renew .claim_type > li {opacity:0;transform:translateY(8px);animation:claimTypeIn .45s ease forwards;animation-delay:var(--claim-delay, 0s);}
 .renew .claim_type button {display:flex;flex-direction:column;justify-content:flex-start;width:100%;height:156px;padding:16px 12px;border:1px solid #dce4ea;border-radius:16px;text-align:left;}
-
 .renew .claim_type button::before {content:'';flex:none;width:50px;height:50px;margin-bottom:12px;background-position:center;background-repeat:no-repeat;background-size:50px;}
 .renew .claim_type span {display:block;}
 .renew .claim_type .tit {font-size:16px;font-weight:700;line-height:20px;}
@@ -2052,7 +2058,7 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .claim_type .liability::before {background-image:var(--ico-claim-property);}
 .renew .claim_type .property::before {background-image:var(--ico-claim-liability);}
 .renew .claim_type .group::before {background-image:var(--ico-claim-group);}
-/* 청구항목 아이콘 애니메이션 */
+/* 청구항목 아이콘 모션 */
 .renew .claim_type .health::before {transform-origin:50% 8%;}
 .renew .claim_type .property::before {transform-origin:62% 42%;}
 .renew .claim_type .health.is-playing::before {animation:claimIconSway .7s ease-in-out 2;}
@@ -2102,18 +2108,29 @@ html.noscroll {overflow:hidden;top:0;}
     .renew .claim_type > li {opacity:1;transform:none;animation:none;}
 }
 
-/* 입력정보 확인 */
-.renew .item_val.wide dl {display: flex; flex-direction: column;gap: 8px;}
-.renew .item_val.wide dl + dl {margin-top:16px;padding-top:16px;border-top:1px solid #ddd;}
-.renew .item_val.wide dl div {margin-top: 0;}
-.renew .item_val.wide dt {width:120px;}
-.renew .item_val.wide dd {width:calc(100% - 128px);}
-.renew .item_val.wide .align_end dt,.renew .item_val.wide .align_end dd {width:50%;}
-.renew .item_val.wide .align_end dd {text-align:right;}
-
 /****** 청구 전 확인사항 ******/
+/* 안내/토스트의 공간 확보 */
+.renew .contents:is(.claim_default, .claim_damage, .claim_pet) .claim_toast {min-height:87px;}
+.renew .contents:is(.claim_default, .claim_pet) .guide_box.claim.damage,
+.renew .contents:is(.claim_default, .claim_damage) .guide_box.claim.pet,
+.renew .contents.claim_default .claim_quick.damage,
+.renew .contents:is(.claim_damage, .claim_pet) :is(.claim_toast, .claim_method, .sss_tit, .claim_quick:not(.damage)) {display:none;}
 /* 토스트알림 */
-.renew .claim_toast {position:relative;display:flex; flex-direction: row; gap: 12px; align-items:center;padding:16px;border-radius:8px;background:#fcf6f4;margin-bottom:24px;}
+.renew .claim_toast {position:relative;display:flex; flex-direction: row; gap: 12px; align-items:center;padding:16px;border-radius:8px;background:#fcf6f4;margin-bottom:24px;transform-origin:50% 50%;animation:claimToastIn .45s both;}
+.renew .claim_toast.is_closing {pointer-events:none;animation:claimToastOut .45s both;}
+@keyframes claimToastIn {
+    0% {opacity:0;transform:translateY(12px) scale(.88);animation-timing-function:cubic-bezier(.2,.8,.2,1);}
+    65% {opacity:1;transform:translateY(-2px) scale(1.025);animation-timing-function:ease-in-out;}
+    100% {opacity:1;transform:translateY(0) scale(1);}
+}
+@keyframes claimToastOut {
+    0% {transform:translateY(0) scale(1);animation-timing-function:ease-out;}
+    25% {transform:translateY(-2px) scale(1.025);animation-timing-function:cubic-bezier(.4,0,.8,.2);}
+    100% {transform:translateY(12px) scale(0);}
+}
+@media (prefers-reduced-motion:reduce) {
+    .renew .claim_toast, .renew .claim_toast.is_closing {animation:none;}
+}
 .renew .claim_toast::before {content:'';flex:none;width:40px;height:40px;background:var(--ico-toast-doc) center/100% no-repeat;}
 .renew .claim_toast .txt_group {display: flex; flex:1; min-width:0; flex-direction: column; gap: 2px;word-break:keep-all;}
 .renew .claim_toast .txt_group .tit {font-size: 15px;color: #222; line-height:19px;}
@@ -2124,8 +2141,38 @@ html.noscroll {overflow:hidden;top:0;}
 @media (max-width:360px) {
     .renew .claim_toast {gap:8px;}
 }
+/* 타인/재산 피해 및 펫보험 안내 */
+.renew .guide_box.claim.damage,
+.renew .guide_box.claim.pet {min-height:78px;margin-top:0;padding:16px 16px 16px 68px; border:none; background-color: #FCF6F4;}
+.renew .guide_box.claim.damage .guide_txt,
+.renew .guide_box.claim.pet .guide_txt {font-size: 15px; line-height: 19px;}
+.renew .guide_box.claim.damage,
+.renew .guide_box.claim.pet {animation:claimDamageIn .35s cubic-bezier(.2,.8,.2,1) backwards;}
+@keyframes claimDamageIn {
+    from {transform:translateY(6px) scale(.97);}
+    to {transform:translateY(0) scale(1);}
+}
+@media (prefers-reduced-motion:reduce) {
+    .renew .guide_box.claim.damage,
+    .renew .guide_box.claim.pet {animation:none;}
+}
+.greeting_wrap + .sss_tit {margin-top: 0;}
+/* 바로가기 */
+.renew .claim_quick {position:relative;display:flex;justify-content:space-around;margin-top:32px;}
+.renew .claim_quick::before {content:'';position:absolute;top:0;left:50%;width:1px;height:128px;background:#e6ecf1;}
+.renew .claim_quick button {display:flex;flex-direction:column;align-items:center; justify-content: center; gap:16px;width:140px;}
+.renew .claim_quick button::before {content:'';width:60px;height:60px;border-radius:50%;background-color:#F3F6F8;background-position:center;background-repeat:no-repeat;background-size:50px;}
+.renew .claim_quick .docs::before {background-image:var(--ico-claim-docs);}
+.renew .claim_quick .reqdocs::before {background-image:var(--ico-claim-reqdocs);}
+.renew .claim_quick .status::before {background-image:var(--ico-claim-status);}
+.renew .claim_quick .txt_group { display: flex; flex-direction: column; justify-content: center; align-items: center; gap:4px; text-align: center;}
+.renew .claim_quick .txt_group span {display: block; font-size:12px;color:#666;line-height:14px;}
+.renew .claim_quick .txt_group .tit {font-size:16px;font-weight:700;color:#222;line-height:20px;}
+.renew .claim_quick + .claim_links {margin-top:40px;}
+.renew .link_list_box.arr.claim_links .btn_senior_link02 {border-color:#dce4ea;}
+.renew .link_list_box.arr.claim_links .btn_senior_link02 > span {display:inline-block;color:#666;font-size:14px;font-weight:400;line-height:18px;}
 
-/* 보험금 청구방법 */
+/****** 청구항목 선택 ******/
 .renew .claim_method {display:flex;flex-direction:column;gap:16px;}
 .renew .claim_method > li {position:relative;}
 .renew .claim_method > li > div {position:relative;}
@@ -2142,29 +2189,20 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .claim_method .method_btn {grid-column:1 / -1;width:100%;height:34px;margin-top:16px;border-radius:17px;background:#0055b9;color:#fff;font-size:14px;font-weight:700;line-height:18px;}
 .renew .claim_method .method_btn span {color:#fff;}
 .renew .claim_method.select {margin-top:8px;}
-
 .renew .claim_method.select > li > div {min-height:64px;}
 .renew .claim_method.select .tit {font-size:16px;line-height:20px;}
 .renew .claim_method .meritz::before {background-image:var(--ico-claim-meritz);}
 .renew .claim_method .meritz .method_btn {background:#ef3b24;}
 .contents:has(.claim_method) .sss_tit {color:#333;margin-bottom:8px;}
-.renew .guide_box.claim.damage {min-height:78px;margin-top:0;padding:16px 16px 16px 68px; border:none; background-color: #FCF6F4;}
-.renew .guide_box.claim.damage .guide_txt {font-size: 15px; line-height: 19px;}
-/* 바로가기 */
-.renew .claim_quick {position:relative;display:flex;justify-content:space-around;margin-top:32px;}
-.renew .claim_quick::before {content:'';position:absolute;top:0;left:50%;width:1px;height:128px;background:#e6ecf1;}
-.renew .claim_quick button {display:flex;flex-direction:column;align-items:center; justify-content: center; gap:16px;width:140px;}
 
-.renew .claim_quick button::before {content:'';width:60px;height:60px;border-radius:50%;background-color:#F3F6F8;background-position:center;background-repeat:no-repeat;background-size:50px;}
-.renew .claim_quick .docs::before {background-image:var(--ico-claim-docs);}
-.renew .claim_quick .reqdocs::before {background-image:var(--ico-claim-reqdocs);}
-.renew .claim_quick .status::before {background-image:var(--ico-claim-status);}
-.renew .claim_quick .txt_group { display: flex; flex-direction: column; justify-content: center; align-items: center; gap:4px; text-align: center;}
-.renew .claim_quick .txt_group span {display: block; font-size:12px;color:#666;line-height:14px;}
-.renew .claim_quick .txt_group .tit {font-size:16px;font-weight:700;color:#222;line-height:20px;}
-.renew .claim_quick + .claim_links {margin-top:40px;}
-.renew .link_list_box.arr.claim_links .btn_senior_link02 {border-color:#dce4ea;}
-.renew .link_list_box.arr.claim_links .btn_senior_link02 > span {display:inline-block;color:#666;font-size:14px;font-weight:400;line-height:18px;}
+/****** 입력정보 확인 ******/
+.renew .item_val.wide dl {display: flex; flex-direction: column;gap: 8px;}
+.renew .item_val.wide dl + dl {margin-top:16px;padding-top:16px;border-top:1px solid #ddd;}
+.renew .item_val.wide dl div {margin-top: 0;}
+.renew .item_val.wide dt {width:120px;}
+.renew .item_val.wide dd {width:calc(100% - 128px);}
+.renew .item_val.wide .align_end dt,.renew .item_val.wide .align_end dd {width:50%;}
+.renew .item_val.wide .align_end dd {text-align:right;}
 
 /****** 청구현황 확인 ******/
 .renew #Container > section.claim_status {position:relative;padding-top: 16px;}
@@ -2175,20 +2213,29 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .status_filter::before {content:'';display:block;width:24px;height:24px;margin:auto;background:var(--ico-filter2) center/100% no-repeat;}
 .renew .status_filter.on {background:#222;}
 .renew .status_filter.on::before {filter:invert(1);}
+.renew.status_filter_open {position:fixed;top:var(--status-scroll-top);left:0;right:0;overflow:hidden;}
+.renew .status_filter_backdrop {position:absolute;inset:0;z-index:9;background:transparent;touch-action:none;}
+.renew.status_filter_open .status_filter {position:relative;z-index:10;}
+.renew.status_filter_open .status_filter_layer {box-sizing:border-box;max-height:var(--status-layer-height);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
 .renew .status_filter_layer {display:none;position:absolute;top:88px;left:0;right:0;z-index:10;padding:16px 24px;background:#fff;border-top:5px solid #eee;border-bottom:1px solid #999;box-shadow:0 5px 7px rgba(0,0,0,.13);}
 .renew .status_filter_layer.no_motion .radio_group.tab_style > .selected {transition:none;}
 .renew .status_filter_layer .ui_select .opt_layer {z-index:3;}
 .renew .status_filter_layer .btn_ok {margin-top:32px;}
-.renew .status_result {margin-top:24px;}
+.renew .status_result {position:relative;margin-top:24px;}
 .renew .result_count {padding:0 8px 10px;border-bottom:2px solid #222;font-size:14px;font-weight:700;line-height:18px;}
 .renew .result_count em {color:#ef3b24;}
 .renew .status_list li {border-bottom:1px solid #ddd;opacity:0;transform:translateY(8px);animation:statusListIn .35s ease forwards;}
 .renew .status_list button {display:flex;flex-direction:column;gap:10px;width:100%;padding:16px 8px;text-align:left;}
-
-.renew .status_list .status_meta,.renew .status_list .status_info {display:flex;align-items:center;justify-content:space-between;width:100%;color:#666;}
-.renew .status_list .status_meta {font-size:13px;line-height:17px;}
-.renew .status_list strong {font-size:16px;line-height:20px;}
-.renew .status_list .status_info {font-size:14px;line-height:18px;}
+.renew .status_list .status_meta,.renew .status_list .status_info {display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:8px;width:100%;min-width:0;white-space:nowrap;color:#666;}
+.renew .status_list .status_meta {font-size:13px;font-weight:400;line-height:17px;}
+.renew .status_list .status_meta > span:first-child,
+.renew .status_list .status_info > span:first-child {min-width:0;overflow:hidden;text-overflow:ellipsis;}
+.renew .status_list .status_info > span:last-child {flex-shrink:0;}
+.renew .status_list .status_meta > span:not(.chip),
+.renew .status_list .status_info > span {color:#666;}
+.renew .status_list .status_meta .chip {flex-shrink:0;font-size:12px;font-weight:700;line-height:14px;padding:4px 10px;}
+.renew .status_list strong {display:block;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:16px;font-weight:700;line-height:20px;color:#222;}
+.renew .status_list .status_info {font-size:14px;font-weight:400;line-height:18px;}
 .renew .claim_status .empty_data {opacity:0;transform:translateY(8px);animation:statusListIn .35s ease both;}
 @keyframes statusListIn {
     to {opacity:1;transform:translateY(0);}
@@ -2202,7 +2249,9 @@ html.noscroll {overflow:hidden;top:0;}
 .renew .tab_contents.claim {margin-top: -24px;}
 .renew .guide_box.claim {position:relative;align-items:center;min-height:62px;margin:24px 0;padding:8px 16px 8px 76px;}
 .renew .guide_box.claim::before {content:'';position:absolute;left:16px;width:44px;height:44px;border-radius:50%;background-color:#fff;background-position:center;background-repeat:no-repeat;background-size:32px;}
-.renew .guide_box.claim.complete::before {background-image:var(--ico-claim-complete);}
+.renew .guide_box.claim.complete::before,
+.renew .guide_box.claim.damage::before {background-image:var(--ico-claim-complete);}
+.renew .guide_box.claim.pet::before {background-image:var(--ico-claim-pet-guide);}
 .renew .guide_box.claim.supplement::before {background-image:var(--ico-claim-supplement);}
 .renew .guide_box.claim.review::before {background-image:var(--ico-claim-review);}
 .renew .guide_box.claim.rejected::before {background-image:var(--ico-claim-rejected);}

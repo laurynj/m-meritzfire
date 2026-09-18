@@ -1154,6 +1154,7 @@ body.renew { width:100%; height:100%; font-size:14px; line-height:18px; letter-s
 .renew .popup .pop_bottom.vertical02 .inner > .inner_flex:first-child {margin:0;}
 
 /* ui-datepicker */
+.renew #ui-datepicker-div { display:none; }
 .renew .ui-datepicker { left:24px !important; right:24px !important; border-radius:8px; box-shadow:0 4px 11px rgba(0,0,0,0.1); padding: 16px 8px; width: auto; border: 1px solid #ddd !important; background:#fff; }
 .renew .ui-datepicker::after { display: none !important; }
 .renew .ui-widget-content { background-color: #fff; }

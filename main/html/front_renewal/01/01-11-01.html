@@ -120,7 +120,7 @@
                             <div class="radio_item"><input type="radio" id="sort3-5" name="period"><label for="sort3-5"><span>직접입력</span></label></div>
                         </div>
                         
-                        <div class="form_item date_period"><!-- 유효성 체크 후 에러시 class값에 'error'추가 -->
+                        <div class="form_item date_period ico_cal"><!-- 유효성 체크 후 에러시 class값에 'error'추가 -->
                             <div class="col date">
                                 <div class="inp_box">
                                     <input type="number" id="searchStartDate" name="" class="datepicker1 inp_txt num_type" inputmode="numeric" aria-label="조회 시작일" placeholder="20260910" maxlength="8" value="20230515" disabled>
@@ -149,42 +149,42 @@
                         <li>
                             <button type="button">
                                 <!-- 접수/서류미접수/심사진행중/면책/종결 : .receive/.notyet/.ongoing/.immunity/.terminate -->
-                                <span class="status_meta"><span>2023.08.08</span><span class="chip receive">접수</span></span>
-                                <strong>좌골신경통, 요추부 외 4건</strong>
+                                <span class="status_meta"><span>2026.08.08 (최근 접수 : 2026.09.10)</span><span class="chip receive">접수</span></span>
+                                <strong>발목 및 발 부위의 관절 및 인대 손상, 좌골신경통, 요추부 외 4건</strong>
                                 <span class="status_info"><span>김메리</span><span>999999999</span></span>
                             </button>
                         </li>
                         <li>
                             <button type="button">
-                                <span class="status_meta"><span>2023.08.08</span><span class="chip notyet">서류미접수</span></span>
-                                <strong>발목 염좌, 인대파열 외 2건</strong>
+                                <span class="status_meta"><span>2026.08.08 (최근 접수 : 2026.09.10)</span><span class="chip notyet">서류미접수</span></span>
+                                <strong>발목 및 발 부위의 관절 및 인대 염좌, 인대파열 외 2건</strong>
                                 <span class="status_info"><span>김메리</span><span>999999999</span></span>
                             </button>
                         </li>
                         <li>
                             <button type="button">
-                                <span class="status_meta"><span>2023.08.08</span><span class="chip ongoing">심사진행중</span></span>
-                                <strong>무릎 반월판 손상, 슬관절염 외 3건</strong>
+                                <span class="status_meta"><span>2026.08.08 (최근 접수 : 2026.09.10)</span><span class="chip ongoing">심사진행중</span></span>
+                                <strong>무릎 반월판 손상, 슬관절염 및 무릎 관절의 인대 손상 외 3건</strong>
                                 <span class="status_info"><span>김메리</span><span>999999999</span></span>
                             </button>
                         </li>
                         <li>
                             <button type="button">
-                                <span class="status_meta"><span>2023.08.08</span><span class="chip terminate">종결</span></span>
+                                <span class="status_meta"><span>2026.08.08 (최근 접수 : 2026.09.10)</span><span class="chip terminate">종결</span></span>
                                 <strong>어깨 회전근개파열, 견관절 외 5건</strong>
                                 <span class="status_info"><span>김메리</span><span>999999999</span></span>
                             </button>
                         </li>
                         <li>
                             <button type="button">
-                                <span class="status_meta"><span>2023.08.08</span><span class="chip immunity">면책</span></span>
+                                <span class="status_meta"><span>2026.08.08 (최근 접수 : 2026.09.10)</span><span class="chip immunity">면책</span></span>
                                 <strong>손목터널증후군, 수근관 협착 외 1건</strong>
                                 <span class="status_info"><span>김메리</span><span>999999999</span></span>
                             </button>
                         </li>
                         <li>
                             <button type="button">
-                                <span class="status_meta"><span>2023.08.08</span><span class="chip notyet">서류미접수</span></span>
+                                <span class="status_meta"><span>2026.08.08 (최근 접수 : 2026.09.10)</span><span class="chip notyet">서류미접수</span></span>
                                 <strong>척추관협착증, 디스크탈출 외 2건</strong>
                                 <span class="status_info"><span>김메리</span><span>999999999</span></span>
                             </button>
@@ -236,16 +236,12 @@
                     $(this).css('animation-delay', index * 0.12 + 's');
                 });
             }
-
             animateStatusList($statusList.children('li'));
-
             new MutationObserver(function (mutations) {
                 var $items = $();
-
                 $.each(mutations, function (_, mutation) {
                     $items = $items.add($(mutation.addedNodes).filter('li'));
                 });
-
                 animateStatusList($items);
             }).observe($statusList[0], { childList: true });
 
@@ -257,7 +253,6 @@
 
             $('.status_search .srch_btn').on('click', function () {
                 if (!$.trim($(this).siblings('.inp_txt').val())) return;
-
                 $(this).addClass('hide').siblings('.delete_btn').removeClass('hide');
             });
 
@@ -265,8 +260,26 @@
                 $(this).siblings('.inp_txt').val('').trigger('input').focus();
             });
 
+            var statusScrollTop = 0,
+                statusFilterClosing = false;
+
+            function resizeStatusFilter() {
+                var layer = $('.status_filter_layer')[0];
+                if (!$('.status_filter.on').length) return;
+                var viewport = window.visualViewport,
+                    bottom = viewport ? viewport.offsetTop + viewport.height : window.innerHeight;
+                layer.style.setProperty('--status-layer-height', Math.max(0, bottom - layer.getBoundingClientRect().top - 16) + 'px');
+            }
+
+            $(window).on('resize.statusFilter', resizeStatusFilter);
+            if (window.visualViewport) {
+                window.visualViewport.addEventListener('resize', resizeStatusFilter);
+                window.visualViewport.addEventListener('scroll', resizeStatusFilter);
+            }
+
             // 상세조회 필터 토글
             $('.status_filter').on('click', function () {
+                if (statusFilterClosing) return;
                 var $button = $(this),
                     $layer = $('.status_filter_layer'),
                     isOpen = $button.hasClass('on');
@@ -275,16 +288,36 @@
                 $button.find('.hidden').text(isOpen ? '상세조회 열기' : '상세조회 닫기');
 
                 if (isOpen) {
-                    $layer.stop(true, true).slideUp(200);
+                    statusFilterClosing = true;
+                    $layer.find('.datepicker1').datepicker('hide');
+                    $layer.stop(true, true).slideUp(200, function () {
+                        $('.status_filter_backdrop').remove();
+                        $('body').removeClass('status_filter_open')[0].style.removeProperty('--status-scroll-top');
+                        window.scrollTo(0, statusScrollTop);
+                        statusFilterClosing = false;
+                    });
                 } else {
+                    statusScrollTop = window.scrollY;
+                    $('body')[0].style.setProperty('--status-scroll-top', -statusScrollTop + 'px');
+                    $('body').addClass('status_filter_open');
+                    $('<div class="status_filter_backdrop" aria-hidden="true"></div>').appendTo($statusResult);
                     $layer.addClass('no_motion').show()
                         .find('input:radio:checked').trigger('change');
 
+                    resizeStatusFilter();
                     $layer[0].offsetHeight;
                     $layer.removeClass('no_motion').hide()
                         .stop(true, true).slideDown(200);
                 }
             });
+
+            // 상세조회가 열려 있거나 닫히는 동안 결과 리스트만 클릭 차단
+            document.addEventListener('click', function (e) {
+                if (!$('body').hasClass('status_filter_open') || !$(e.target).closest('.status_result').length) return;
+
+                e.preventDefault();
+                e.stopImmediatePropagation();
+            }, true);
 
             // 조회기간 계산 (실제 조회 기준은 개발 시 적용)
             $('.status_filter_layer input[name="period"]').on('change', function () {

@@ -41,12 +41,24 @@
         <!-- main container [s] -->
         <main id="Container">
             <!-- container [s] -->
-            <section class="contents">
+            <!-- 청구 유형 클래스는 하나만 적용: claim_default 일반 / claim_damage 타인·재산 피해 / claim_pet 펫보험 -->
+            <!-- 개발 시 최초 HTML에 유형 클래스를 지정하여 안내 공간 확보. 아래 URL 분기 스크립트는 퍼블리싱 확인용으로 삭제 가능 -->
+            <section class="contents claim_default">
+                <script>
+                    // 하위 콘텐츠가 그려지기 전에 유형 적용: ?type=damage / ?type=pet
+                    (function () {
+                        var claimType = new URLSearchParams(location.search).get('type');
+                        if (claimType !== 'damage' && claimType !== 'pet') return;
+                        var contents = document.currentScript.parentElement;
+                        contents.classList.remove('claim_default', 'claim_damage', 'claim_pet');
+                        contents.classList.add('claim_' + claimType);
+                    })();
+                </script>
                 <div class="greeting_wrap">
                     <h2 class="greeting_tit">청구 전 <strong>확인</strong>해 주세요.</h2>
                 </div>
 
-                <!-- 토스트 알림 : 비노출 .hide -->
+                <!-- 토스트 알림 : 일반 청구(claim_default)에서 노출 -->
                 <div class="claim_toast">
                     <div class="txt_group">
                         <span class="tit"><strong>서류보완</strong>이 필요해요.</span>
@@ -56,7 +68,7 @@
                     <button type="button" class="close"><span class="hidden">닫기</span></button>
                 </div>
 
-                <!-- 실손24 : 비노출 .hide -->
+                <!-- 실손24 : 일반 청구(claim_default)에서 노출 -->
                 <h3 class="sss_tit"><strong>다른 방법으로 간편</strong>하게 청구할 수 있어요!</h3>
                 <ul class="claim_method">
                     <li>
@@ -68,7 +80,7 @@
                     </li>
                 </ul>
 
-                <!-- Quick link: 비노출 .hide -->
+                <!-- Quick link : 일반 청구(claim_default)에서 노출 -->
                 <ul class="claim_quick">
                     <li>
                         <button type="button" class="docs">
@@ -88,12 +100,18 @@
                     </li>
                 </ul>
 
-                <!-- 안내 : 노출 .hide 삭제 -->
-                <div class="guide_box claim complete damage hide">
+                <!-- 타인 피해/재산 피해 청구 안내 : section.contents.claim_damage에서 노출 -->
+                <div class="guide_box claim damage">
                     <span class="guide_txt">타인 피해 청구와 재산 피해 청구는<br><span class="fc_red">서류 없이도 청구가 가능</span>해요.</span>
                 </div>
-                <!-- Quick link : 노출 .hide 삭제 -->
-                <ul class="claim_quick damage hide">
+
+                <!-- 펫보험 청구 안내 : section.contents.claim_pet에서 노출 -->
+                <div class="guide_box claim pet">
+                    <span class="guide_txt">제휴 동물병원에서 보험금 현장접수를<br>하신 경우, 별도 접수가 필요하지 않아요</span>
+                </div>
+
+                <!-- Quick link : 타인/재산 피해 및 펫보험 청구에서 노출 -->
+                <ul class="claim_quick damage">
                     <li>
                         <button type="button" class="reqdocs">
                             <div class="txt_group">
@@ -140,21 +158,28 @@
     <!-- 퍼블리싱 UI 확인을 위한 script로 개발 시 참고만 해 주세요 -->
     <script type="text/javascript">
         // 타인/재산 피해 청구: 01-10-02.html?type=damage
-        var isDamageClaim = new URLSearchParams(location.search).get('type') === 'damage';
-        $('.claim_toast, .claim_method, .sss_tit').toggleClass('hide', isDamageClaim);
-        $('.guide_box.claim').toggleClass('hide', !isDamageClaim);
-        $('.claim_quick:not(.damage)').toggleClass('hide', isDamageClaim);
-        $('.claim_quick.damage').toggleClass('hide', !isDamageClaim);
+        // 펫보험 청구: 01-10-02.html?type=pet
+        // 초기 노출은 section.contents의 청구 유형 클래스와 CSS에서 처리
 
         // 토스트 닫기
         $('.claim_toast .close').on('click', function () {
-            $(this).closest('.claim_toast')
-                .stop(true, true)
-                .css('min-height', 0)
-                .fadeTo(200, 0)
-                .slideUp(250, function () {
-                    $(this).remove();
-                });
+            var $toast = $(this).closest('.claim_toast');
+            // 중복 클릭 방지
+            if ($toast.hasClass('is_closing')) return;
+            // 동작 줄이기 설정 시 즉시 삭제
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                $toast.remove();
+                return;
+            }
+            // 사라짐 완료 후 여백 접기
+            $toast.on('animationend.claimToast', function (e) {
+                if (e.target !== this || e.originalEvent.animationName !== 'claimToastOut') return;
+                $toast.off('animationend.claimToast')
+                    .css({height:$toast.height(), minHeight:0})
+                    .animate({height:0, paddingTop:0, paddingBottom:0, marginBottom:0}, 180, function () {
+                        $(this).remove();
+                    });
+            }).addClass('is_closing');
         });
     </script>
 </body>

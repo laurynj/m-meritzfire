@@ -59,9 +59,9 @@
                 <div class="item_val wide">
                     <dl>
                         <div><dt>치료 받은분</dt><dd>김메리</dd></div>
+                        <div><dt>사고 유형</dt><dd>업무상해</dd></div>
                         <div><dt>사고 일자</dt><dd>2026.12.31</dd></div>
                         <div><dt>최초 진단일자</dt><dd>2026.10.31</dd></div><!-- 기본형/펫보험 일반상해 : 최초 진단일자 삭제 -->
-                        <div><dt>사고 유형</dt><dd>업무상해</dd></div>
                         <div><dt>사고 내용</dt><dd>몸살감기</dd></div>
                         <!-- 펫보험일 경우 직업 및 직무 ~ 탑승 수단 항목 삭제 -->
                         <!-- 기본형일 경우 직업 및 직무 ~ 방문 병원 항목 삭제-->
@@ -140,7 +140,7 @@
 
                 // 펫보험 일반상해: 최초 진단일자 추가 삭제
                 if (type === 'pet-injury') {
-                    $dl.eq(0).children('div').eq(2).remove();
+                    $dl.eq(0).children('div').eq(3).remove();
                 }
             }
 
@@ -148,7 +148,7 @@
                 // 기본형: 직업 및 직무 ~ 방문 병원 삭제
                 $dl.eq(0).children('div').slice(5, 10).remove();
                 // 기본형: 최초 진단일자 삭제
-                $dl.eq(0).children('div').eq(2).remove();
+                $dl.eq(0).children('div').eq(3).remove();
             }
         });
     </script>

@@ -27,6 +27,11 @@ $(function () {
         }
     });
 
+    $('.ico_cal .datepicker1').datepicker('option', {
+        buttonImage: '',
+        buttonImageOnly: false
+    });
+
     $('#ui-datepicker-div').on('mouseover focusin', '.ui-datepicker-prev, .ui-datepicker-next', function () {
         if (this.hasAttribute('title')) {
             $(this).attr('aria-label', $(this).attr('title')).removeAttr('title');
